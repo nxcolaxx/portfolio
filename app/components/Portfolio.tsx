@@ -521,7 +521,7 @@ export default function Portfolio() {
       <div className="nb-drawer">
         <div className="nb-drawer-inner">
           <div className="nb-drawer-pad">
-            <div className="nb-media" style={proj.youtube || proj.image ? {} : { background: ac + "1f" }}>
+            <div className={`nb-media${proj.youtube || proj.image ? " has-embed" : ""}`} style={proj.youtube || proj.image ? {} : { background: ac + "1f" }}>
               {proj.youtube ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${proj.youtube}`}
@@ -785,7 +785,8 @@ export default function Portfolio() {
           gap: 14px; position: relative; overflow: hidden; }
         .nb-media::after { content: ""; position: absolute; inset: 0;
           background-image: repeating-linear-gradient(135deg, transparent 0 26px, rgba(255,255,255,.5) 26px 27px);
-          opacity: .35; }
+          opacity: .35; pointer-events: none; }
+        .nb-media.has-embed::after { display: none; }
         .nb-media .play { width: 58px; height: 58px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center; z-index: 1; }
         .nb-media .play-label { font-family: var(--mono); font-size: 11px; z-index: 1; }
