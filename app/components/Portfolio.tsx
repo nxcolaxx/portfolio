@@ -456,7 +456,19 @@ export default function Portfolio() {
   };
 
   const t = copy[lang];
-  const clients = ["Claro", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
+  const clients = [
+    { name: "Claro",       domain: "claro.com.br" },
+    { name: "Sanofi",      domain: "sanofi.com" },
+    { name: "Unilever",    domain: "unilever.com" },
+    { name: "Huggies",     domain: "huggies.com" },
+    { name: "Samsung",     domain: "samsung.com" },
+    { name: "Suvinil",     domain: "suvinil.com.br" },
+    { name: "Loft",        domain: "loft.com.br" },
+    { name: "Licor 43",    domain: "licor43.com" },
+    { name: "Nubank",      domain: "nubank.com.br" },
+    { name: "Baixio",      domain: null },
+    { name: "Grupo Afeet", domain: "grupoafeet.com.br" },
+  ];
   const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora"];
 
   /* ---------------------------- SCROLL ---------------------------- */
@@ -838,6 +850,9 @@ export default function Portfolio() {
           padding: 0 .35em; white-space: nowrap; display: flex; align-items: center; gap: .5em; }
         .nb-marquee-item::after { content: ""; width: 9px; height: 9px; border-radius: 50%;
           background: var(--accent); opacity: .55; }
+        .nb-marquee-logo { height: 38px; max-width: 110px; object-fit: contain; display: block;
+          filter: grayscale(1) opacity(0.45); transition: filter .3s; }
+        .nb-marquee:hover .nb-marquee-logo { filter: grayscale(1) opacity(0.72); }
         .nb-talent { display: flex; flex-wrap: wrap; gap: 10px; }
         .nb-talent span { font-family: var(--sans); font-weight: 500; font-size: 15px;
           padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px;
@@ -1145,7 +1160,21 @@ export default function Portfolio() {
             <div className="nb-strip-label rv" style={{ marginTop: 0 }}>{t.recognition.clientsLabel}</div>
             <div className="nb-marquee rv">
               <div className="nb-marquee-track">
-                {[...clients, ...clients].map((c, i) => <span className="nb-marquee-item" key={i}>{c}</span>)}
+                {[...clients, ...clients].map((c, i) => (
+                  <span className="nb-marquee-item" key={i}>
+                    {c.domain ? (
+                      <>
+                        <img
+                          src={`https://logo.clearbit.com/${c.domain}`}
+                          alt={c.name}
+                          className="nb-marquee-logo"
+                          onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.nextSibling.style.display = "inline"; }}
+                        />
+                        <span style={{ display: "none" }}>{c.name}</span>
+                      </>
+                    ) : c.name}
+                  </span>
+                ))}
               </div>
             </div>
           </section>
