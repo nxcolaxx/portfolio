@@ -1165,7 +1165,7 @@ export default function Portfolio() {
                     {c.domain ? (
                       <>
                         <img
-                          src={`https://logo.clearbit.com/${c.domain}`}
+                          src={`https://cdn.brandfetch.io/${c.domain}/w/400/h/400`}
                           alt={c.name}
                           className="nb-marquee-logo"
                           onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.nextSibling.style.display = "inline"; }}
