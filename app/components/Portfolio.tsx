@@ -475,7 +475,7 @@ export default function Portfolio() {
 
   const t = copy[lang];
   const clients = ["Claro", "Neutrogena", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
-  const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora"];
+  const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora", "Vic Hollo", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
 
   /* ---------------------------- SCROLL ---------------------------- */
   const onScroll = useCallback(() => {
