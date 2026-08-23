@@ -900,11 +900,11 @@ export default function Portfolio() {
           margin-bottom: clamp(8px, 1.4vw, 22px);
           transition: transform .5s cubic-bezier(.16,1,.3,1); }
         .nb-hero-portrait:hover { transform: translateY(-4px); }
-        /* the source photo is a mirror selfie: zoom past the phone and frame
-           the face, which sits up and to the left of centre */
+        /* gentle zoom towards the face, with headroom kept above the hair —
+           the phone stays in frame on purpose */
         .nb-hero-portrait img { width: 100%; height: 100%;
           object-fit: cover; display: block;
-          transform: scale(1.75); transform-origin: 31% 27%; }
+          transform: scale(1.24); transform-origin: 36% 17%; }
         .nb-hero-bottom { display: flex; justify-content: space-between; align-items: flex-end;
           gap: 40px; margin-top: 46px; flex-wrap: wrap; }
         .nb-hero-tag { font-family: var(--display); font-weight: 400;
