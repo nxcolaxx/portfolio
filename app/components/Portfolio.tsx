@@ -27,7 +27,7 @@ export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [openProject, setOpenProject] = useState(0);
+  const [openProject, setOpenProject] = useState(null);
   const [openMore, setOpenMore] = useState(null);
 
   const accents = ["#B7780F", "#DD4A27", "#CE2A86", "#2F6B41", "#1f2eff"];
@@ -63,18 +63,29 @@ export default function Portfolio() {
         recogLabel: "Recognition",
         partnersLabel: "Partners",
         videoLabel: "video — coming soon",
+        openLabel: "Open case",
+        closeLabel: "Close case",
+        resultsLabel: "Results, in short",
+        results: [
+          { v: "67M", l: "views on campaign films" },
+          { v: "17.2M", l: "impressions in merchandising" },
+          { v: "24×", l: "the healthcare category benchmark" },
+          { v: "3", l: "international creative awards" },
+        ],
         items: [
           {
             title: "Hidden Words",
             meta: "Sanofi · Greenpark · 2024",
             tags: ["Real-time", "AI", "Healthcare"],
+            pitch: "Caught a micro-trend and turned it into six brand campaigns in days — 24× the category benchmark.",
+            badge: "2 awards",
             p1: `Sanofi Brazil's social strategy runs on social listening. When "hidden words AI" started trending on Google Trends, we moved fast — building a visual campaign tuned to the message and identity of six different brands.`,
             p2: "More than 1,000 AI-generated images across six social posts. The campaign landed far above the healthcare category benchmark, turning a micro-trend into an award-winning real-time activation.",
             metrics: [
-              { v: "5.8%", l: "avg. ERR per post" },
-              { v: "8K", l: "organic engagement" },
+              { v: "5.8%", l: "avg. ERR per post — vs 0.24% category benchmark" },
               { v: "1,000+", l: "AI images generated" },
-              { v: "0.24%", l: "category benchmark beaten" },
+              { v: "8K", l: "organic engagement" },
+              { v: "6", l: "brands activated at once" },
             ],
             role: "Creative & content strategy",
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
@@ -82,19 +93,21 @@ export default function Portfolio() {
             // e.g. ["/hw-piece-1.jpg", "/hw-piece-2.jpg", ...]
             gallery: [null, null, null, null, null, null],
             galleryLabel: "The pieces",
-            boardImage: "/hidden%20words%20sanofi%20case.png",
+            thumb: "/hw-card.jpg",
+            boardImage: "/hw-board.jpg",
             boardLabel: "The board — full layout",
           },
           {
             title: "Rio Open",
             meta: "Claro Brasil · Talent · 2025",
             tags: ["Real-time", "Sports", "Brand"],
+            pitch: "Ten days of tennis turned into a non-stop content engine for Claro, reaching millions.",
             p1: "Claro's presence at Latin America's biggest tennis event, covered in real time — strategy and creative direction across opportunity, real-time and big-activation fronts.",
             p2: "Partnerships with @newballsplease and content featuring João Fonseca turned ten days of tennis into a continuous content engine reaching millions.",
             metrics: [
               { v: "120+", l: "content pieces live" },
-              { v: "10 days", l: "of real-time coverage" },
               { v: "Millions", l: "in total reach" },
+              { v: "10 days", l: "of real-time coverage" },
             ],
             role: "Content supervision & creative strategy",
             partners: "@newballsplease · João Fonseca",
@@ -104,12 +117,13 @@ export default function Portfolio() {
             title: "@emmmasays",
             meta: "Independent · Music Industry · 2024 – 25",
             tags: ["Music", "Social", "Growth"],
+            pitch: "Built an international artist's channel from zero to 8K fans in six months, shooting across three continents.",
             p1: "An international music artist's channel, built from zero. I designed the creative direction and channel strategy, then a paid-media layer that funneled fans straight to her page.",
             p2: "Production and direction of shootings across three continents — Asia, North America, Europe — anchored by a content system the audience actually wanted to follow.",
             metrics: [
               { v: "+8K", l: "organic followers in 6 months" },
-              { v: "3K", l: "newsletter subscribers" },
               { v: "12%", l: "avg. engagement rate" },
+              { v: "3K", l: "newsletter subscribers" },
               { v: "3", l: "continents shot" },
             ],
             role: "Creative strategy, social & direction",
@@ -119,12 +133,14 @@ export default function Portfolio() {
             title: "Loft",
             meta: "BFerraz · 2025",
             tags: ["Social strategy", "Creative", "Brand campaign"],
+            pitch: "A B2C2B repositioning with Angélica and Luciano Huck that pulled 67M views.",
+            badge: "AMPRO Silver",
             p1: "In Brazil, thousands of people still try to rent or sell property on their own — and a lingering distrust of real-estate agencies turns that into bureaucracy, insecurity and headaches. Loft's answer: you can't leave it to luck, you go with who understands.",
             p2: "We opened a B2C2B campaign with a Media for Equity move featuring Loft partners Angélica and Luciano Huck — generating the buzz the brand needed. An integrated campaign of films, merchandising and content built a more trusted, more recognized brand in the real-estate market. I led the social strategy and brought creative insights to the concept.",
             metrics: [
-              { v: "10.9M", l: "film reach" },
               { v: "67M", l: "film views" },
               { v: "17.2M", l: "merchandising impressions" },
+              { v: "10.9M", l: "film reach" },
               { v: "B2C2B", l: "strategic positioning shift" },
             ],
             role: "Social strategy & creative insights",
@@ -136,6 +152,7 @@ export default function Portfolio() {
             title: "Longines Horse Show",
             meta: "Prime You · Live Event",
             tags: ["Live event", "Real-time", "Lead gen"],
+            pitch: "Real-time coverage of a high-visibility live event, built to convert presence into qualified leads.",
             p1: "Prime You at the Longines Horse Show — a real-time content operation built for a high-visibility live event. Exclusive coverage positioned the brand inside a strategic environment, surrounded by its ideal audience.",
             p2: "Activations and brand touchpoints turned event presence into measurable outcomes, generating qualified leads with potential clients throughout the show.",
             metrics: [
@@ -282,18 +299,29 @@ export default function Portfolio() {
         recogLabel: "Reconhecimento",
         partnersLabel: "Parcerias",
         videoLabel: "vídeo — em breve",
+        openLabel: "Abrir case",
+        closeLabel: "Fechar case",
+        resultsLabel: "Resultados, em resumo",
+        results: [
+          { v: "67MM", l: "de views em filmes de campanha" },
+          { v: "17,2MM", l: "de impactos em merchandising" },
+          { v: "24×", l: "o benchmark da categoria de saúde" },
+          { v: "3", l: "prêmios internacionais de criação" },
+        ],
         items: [
           {
             title: "Hidden Words",
             meta: "Sanofi · Greenpark · 2024",
             tags: ["Tempo real", "IA", "Saúde"],
+            pitch: "Peguei uma microtendência e virei seis campanhas de marca em dias — 24× o benchmark da categoria.",
+            badge: "2 prêmios",
             p1: `A social da Sanofi Brasil roda em cima de social listening. Quando "hidden words AI" começou a bombar no Google Trends, a gente agiu rápido: montou uma campanha visual afinada com a mensagem e a identidade de seis marcas ao mesmo tempo.`,
             p2: "Foram mais de 1.000 imagens geradas por IA em seis posts. A campanha estourou o benchmark da categoria de saúde e virou uma ativação premiada — feita em tempo real.",
             metrics: [
-              { v: "5,8%", l: "ERR médio por post" },
-              { v: "8K", l: "de engajamento orgânico" },
+              { v: "5,8%", l: "ERR médio por post — contra 0,24% do benchmark" },
               { v: "1.000+", l: "imagens criadas com IA" },
-              { v: "0,24%", l: "benchmark da categoria batido" },
+              { v: "8K", l: "de engajamento orgânico" },
+              { v: "6", l: "marcas ativadas de uma vez" },
             ],
             role: "Estratégia criativa e de conteúdo",
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
@@ -301,19 +329,21 @@ export default function Portfolio() {
             // ex.: ["/hw-piece-1.jpg", "/hw-piece-2.jpg", ...]
             gallery: [null, null, null, null, null, null],
             galleryLabel: "As peças",
-            boardImage: "/hidden%20words%20sanofi%20case.png",
+            thumb: "/hw-card.jpg",
+            boardImage: "/hw-board.jpg",
             boardLabel: "O board — layout completo",
           },
           {
             title: "Rio Open",
             meta: "Claro Brasil · Talent · 2025",
             tags: ["Tempo real", "Esportes", "Branding"],
+            pitch: "Dez dias de tênis virando máquina de conteúdo para a Claro, com alcance de milhões.",
             p1: "A presença da Claro no maior torneio de tênis da América Latina, coberta em tempo real — com estratégia e direção criativa em três frentes: oportunidade, real time e grandes ativações.",
             p2: "Parcerias com o @newballsplease e conteúdos com o João Fonseca transformaram dez dias de torneio numa máquina de conteúdo que rodou sem parar e alcançou milhões.",
             metrics: [
               { v: "120+", l: "conteúdos no ar" },
-              { v: "10 dias", l: "de cobertura ao vivo" },
               { v: "Milhões", l: "de alcance" },
+              { v: "10 dias", l: "de cobertura ao vivo" },
             ],
             role: "Supervisão de conteúdo e estratégia criativa",
             partners: "@newballsplease · João Fonseca",
@@ -323,12 +353,13 @@ export default function Portfolio() {
             title: "@emmmasays",
             meta: "Independente · Indústria Musical · 2024 – 25",
             tags: ["Música", "Social", "Crescimento"],
+            pitch: "Construí o canal de uma artista internacional do zero a 8K fãs em seis meses, com shooting em três continentes.",
             p1: "O canal de uma artista internacional, construído do zero. Desenhei a direção criativa e a estratégia de canais — e, na sequência, uma camada de mídia paga que levava os fãs direto pra página dela.",
             p2: "Produção e direção de shootings em três continentes — Ásia, América do Norte e Europa — em cima de um sistema de conteúdo que a audiência realmente queria acompanhar.",
             metrics: [
               { v: "+8K", l: "seguidores orgânicos em 6 meses" },
-              { v: "3K", l: "inscritos na newsletter" },
               { v: "12%", l: "de engajamento médio" },
+              { v: "3K", l: "inscritos na newsletter" },
               { v: "3", l: "continentes de shooting" },
             ],
             role: "Estratégia criativa, social e direção",
@@ -338,12 +369,14 @@ export default function Portfolio() {
             title: "Loft",
             meta: "BFerraz · 2025",
             tags: ["Estratégia de social", "Criação", "Campanha de marca"],
+            pitch: "Um reposicionamento B2C2B com Angélica e Luciano Huck que rendeu 67MM de views.",
+            badge: "AMPRO Prata",
             p1: "No Brasil, milhares de pessoas ainda tentam alugar ou vender imóvel por conta própria — e a desconfiança com imobiliárias transforma isso em burocracia, insegurança e dor de cabeça. A resposta da Loft: não dá pra contar com a sorte, vai com quem entende.",
             p2: "Abrimos uma campanha B2C2B com uma ação de Media for Equity estrelada pelos sócios da marca, Angélica e Luciano Huck — gerando o buzz que a Loft precisava. Uma campanha integrada de filmes, merchans e conteúdo construiu uma marca mais confiável e reconhecida no mercado imobiliário. Cuidei da estratégia de social e trouxe insights criativos pro conceito.",
             metrics: [
-              { v: "10,9MM", l: "de alcance nos filmes" },
               { v: "67MM", l: "de views nos filmes" },
               { v: "17,2MM", l: "de impactos em merchans" },
+              { v: "10,9MM", l: "de alcance nos filmes" },
               { v: "B2C2B", l: "virada de posicionamento" },
             ],
             role: "Estratégia de social e insights criativos",
@@ -355,6 +388,7 @@ export default function Portfolio() {
             title: "Longines Horse Show",
             meta: "Prime You · Evento ao Vivo",
             tags: ["Evento ao vivo", "Tempo real", "Geração de leads"],
+            pitch: "Cobertura em tempo real de um evento de alta visibilidade, feita para virar lead qualificado.",
             p1: "A Prime You no Longines Horse Show: uma operação de conteúdo em tempo real pensada pra um evento ao vivo de alta visibilidade. A cobertura exclusiva colocou a marca num ambiente estratégico, cercada do público certo.",
             p2: "As ativações e os pontos de contato com a marca transformaram a presença no evento em resultado de verdade — gerando leads qualificados com potenciais clientes ao longo de todo o show.",
             metrics: [
@@ -474,6 +508,8 @@ export default function Portfolio() {
   };
 
   const t = copy[lang];
+  // home leads with the three that sell hardest: awards, 67M views, Claro
+  const homeHighlights = [t.work.items[0], t.work.items[3], t.work.items[1]];
   const clients = ["Claro", "Neutrogena", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
   const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora", "Vic Hollo", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
 
@@ -491,9 +527,10 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [onScroll]);
 
-  /* ---- scroll to top whenever the page changes ---- */
+  /* ---- scroll to top whenever the page changes; close any open case ---- */
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
+    setOpenProject(null);
   }, [page]);
 
   /* ---------------------------- REVEAL ---------------------------- */
@@ -519,11 +556,69 @@ export default function Portfolio() {
     setPage(p);
   };
 
-  /* ---- reusable expandable project row (index + drawer) ---- */
-  const ProjectRow = ({ proj, index, ac, open, onToggle }) => {
+  /* ---- card thumbnail: YouTube still, explicit thumb, or nothing ---- */
+  const thumbOf = (proj) =>
+    proj.thumb || proj.image ||
+    (proj.youtube ? `https://img.youtube.com/vi/${proj.youtube}/maxresdefault.jpg` : null);
+
+  /* ---- a metric only reads as a headline number if it has a digit ---- */
+  const hasNumbers = (proj) => Boolean(proj.metrics?.[0] && /\d/.test(proj.metrics[0].v));
+
+  /* ---- the visual card: image, one-line pitch, two headline numbers ---- */
+  const ProjectCard = ({ proj, ac, open, onToggle }) => {
+    const thumb = thumbOf(proj);
+    return (
+      <button className={"nb-card" + (open ? " is-open" : "")} onClick={onToggle} aria-expanded={open}>
+        <div className={"nb-card-media" + (thumb ? "" : " blank")}
+          style={thumb ? {} : { background: ac + "1f", color: ac }}>
+          {thumb ? (
+            <img src={thumb} alt={proj.title} loading="lazy" />
+          ) : (
+            <span className="initial">{proj.title.charAt(0)}</span>
+          )}
+          {proj.badge && <span className="nb-card-badge">{proj.badge}</span>}
+          {proj.youtube && (
+            <span className="nb-card-play">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+                <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#1a1a17" />
+              </svg>
+            </span>
+          )}
+        </div>
+        <div className="nb-card-body">
+          <div className="nb-card-meta">{proj.meta}</div>
+          <div className="nb-card-name">{proj.title}</div>
+          <p className="nb-card-pitch">{proj.pitch}</p>
+          {hasNumbers(proj) ? (
+            <div className="nb-card-nums">
+              {proj.metrics.slice(0, 2).map((m, k) => (
+                <div key={k}>
+                  <div className="nb-card-num-v" style={{ color: ac }}>{m.v}</div>
+                  <div className="nb-card-num-l">{m.l}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="nb-card-nums">
+              <div className="nb-tags" style={{ marginBottom: 0 }}>
+                {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
+              </div>
+            </div>
+          )}
+          <div className="nb-card-foot">
+            <span className="sign" style={{ color: ac }}>{open ? "—" : "+"}</span>
+            {open ? t.work.closeLabel : t.work.openLabel}
+          </div>
+        </div>
+      </button>
+    );
+  };
+
+  /* ---- the full case, opened in place under the card ---- */
+  const CaseDetail = ({ proj, ac, onClose }) => {
     // only the pieces that actually have an image — empty slots stay hidden
     const pieces = Array.isArray(proj.gallery) ? proj.gallery.filter(Boolean) : [];
-    const hasGallery = pieces.length > 0 || Boolean(proj.boardImage);
+    const hasBoard = pieces.length > 0 || Boolean(proj.boardImage);
     const copyBlock = (
       <div className="nb-drawer-copy">
         <div className="nb-tags">
@@ -563,82 +658,90 @@ export default function Portfolio() {
     );
 
     return (
-      <div className={"nb-proj" + (open ? " open" : "")}>
-        <button className="nb-proj-head" onClick={onToggle} aria-expanded={open}>
-          <span className="nb-proj-num" style={{ color: ac }}>
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="nb-proj-mid">
-            <span className="nb-proj-name">{proj.title}</span>
-            <span className="nb-proj-meta">{proj.meta}</span>
-          </span>
-          <span className="nb-proj-toggle" style={open ? { borderColor: ac } : {}}>
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-              <path d="M7.5 1v13M1 7.5h13" stroke={open ? ac : "currentColor"} strokeWidth="1.6" />
-            </svg>
-          </span>
-        </button>
-        <div className="nb-drawer">
-          <div className="nb-drawer-inner">
-            {hasGallery ? (
-              <div className="nb-drawer-pad gallery">
-                {pieces.length > 0 && (
-                  <div className="nb-block">
-                    <div className="nb-block-label" style={{ color: ac }}>{proj.galleryLabel}</div>
-                    <div className="nb-gallery">
-                      {pieces.map((src, k) => (
-                        <div className="nb-gallery-cell" key={k}>
-                          <img src={src} alt={`${proj.title} — ${k + 1}`} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {proj.boardImage && (
-                  <div className="nb-block">
-                    <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
-                    <div className="nb-board">
-                      <img src={proj.boardImage} alt={`${proj.title} — board`} />
-                    </div>
-                  </div>
-                )}
-                <div className="nb-gallery-copy">{copyBlock}</div>
-              </div>
-            ) : (
-              <div className="nb-drawer-pad">
-                <div className={`nb-media${proj.youtube || proj.image ? " has-embed" : ""}`} style={proj.youtube || proj.image ? {} : { background: ac + "1f" }}>
-                  {proj.youtube ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${proj.youtube}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
-                    />
-                  ) : proj.image ? (
-                    <img
-                      src={proj.image}
-                      alt={proj.title}
-                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", borderRadius: 4 }}
-                    />
-                  ) : (
-                    <>
-                      <span className="play" style={{ background: ac }}>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#fff" />
-                        </svg>
-                      </span>
-                      <span className="play-label" style={{ color: ac }}>{t.work.videoLabel}</span>
-                    </>
-                  )}
-                </div>
-                {copyBlock}
-              </div>
-            )}
-          </div>
+      <div className="nb-case">
+        <div className="nb-case-top">
+          <div className="nb-case-title">{proj.title}</div>
+          <button className="nb-case-close" onClick={onClose}>
+            {t.work.closeLabel} <span style={{ fontSize: 13, lineHeight: 1 }}>✕</span>
+          </button>
         </div>
+        <div className={"nb-case-grid" + (hasBoard ? " stacked" : "")}>
+          {proj.youtube ? (
+            <div className="nb-media has-embed">
+              <iframe
+                src={`https://www.youtube.com/embed/${proj.youtube}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
+              />
+            </div>
+          ) : !hasBoard ? (
+            <div className="nb-media" style={{ background: ac + "1f" }}>
+              <span className="play" style={{ background: ac }}>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#fff" />
+                </svg>
+              </span>
+              <span className="play-label" style={{ color: ac }}>{t.work.videoLabel}</span>
+            </div>
+          ) : null}
+          {copyBlock}
+        </div>
+        {pieces.length > 0 && (
+          <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
+            <div className="nb-block-label" style={{ color: ac }}>{proj.galleryLabel}</div>
+            <div className="nb-gallery">
+              {pieces.map((src, k) => (
+                <div className="nb-gallery-cell" key={k}>
+                  <img src={src} alt={`${proj.title} — ${k + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {proj.boardImage && (
+          <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
+            <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
+            <div className="nb-board">
+              <img src={proj.boardImage} alt={`${proj.title} — board`} loading="lazy" />
+            </div>
+          </div>
+        )}
       </div>
     );
   };
+
+  /* ---- card grid; the open case takes a full-width row under its card ---- */
+  const ProjectGrid = ({ items }) => (
+    <div className="nb-cards">
+      {items.map((proj, i) => {
+        const ac = accents[i % accents.length];
+        const open = openProject === i;
+        return (
+          <React.Fragment key={i}>
+            <ProjectCard
+              proj={proj}
+              ac={ac}
+              open={open}
+              onToggle={() => setOpenProject(open ? null : i)}
+            />
+            {open && <CaseDetail proj={proj} ac={ac} onClose={() => setOpenProject(null)} />}
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+
+  const ResultsBand = () => (
+    <div className="nb-results rv d1">
+      {t.work.results.map((r, i) => (
+        <div className="nb-result" key={i}>
+          <div className="nb-result-v" style={{ color: accents[i % accents.length] }}>{r.v}</div>
+          <div className="nb-result-l">{r.l}</div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div className="nb">
@@ -786,10 +889,7 @@ export default function Portfolio() {
         .nb-pagehero-sub { font-family: var(--mono); font-size: 13px; color: var(--ink-soft);
           margin-top: 20px; }
 
-        /* ---------- approach ---------- */
-        .nb-approach-title { font-family: var(--display); font-weight: 400;
-          font-size: clamp(28px, 3.6vw, 52px); line-height: 1.1; letter-spacing: -.025em;
-          max-width: 19ch; margin-bottom: 64px; }
+        /* ---------- approach (lives on the About page) ---------- */
         .nb-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
           background: var(--line); border: 1px solid var(--line); }
         .nb-pillar { background: var(--bg); padding: 40px 32px; position: relative; }
@@ -802,37 +902,8 @@ export default function Portfolio() {
         /* ---------- work ---------- */
         .nb-work-head { display: flex; justify-content: space-between; align-items: flex-end;
           gap: 40px; margin-bottom: 18px; flex-wrap: wrap; }
-        .nb-work-title { font-family: var(--display); font-weight: 400;
-          font-size: clamp(26px, 3.2vw, 46px); line-height: 1.1; letter-spacing: -.025em;
-          max-width: 17ch; }
         .nb-work-hint { font-family: var(--mono); font-size: 12px; color: var(--ink-faint);
           display: flex; align-items: center; gap: 8px; white-space: nowrap; }
-        .nb-proj { border-top: 1px solid var(--line); }
-        .nb-proj:last-child { border-bottom: 1px solid var(--line); }
-        .nb-proj-head { width: 100%; background: transparent; border: 0; text-align: left;
-          display: grid; grid-template-columns: 64px 1fr auto; gap: 28px;
-          align-items: center; padding: 30px 8px; transition: padding .3s, background .3s; }
-        .nb-proj-head:hover { background: var(--bg-2); padding-left: 20px; padding-right: 20px; }
-        .nb-proj.open .nb-proj-head { background: var(--bg-2); }
-        .nb-proj-num { font-family: var(--mono); font-size: 13px; font-weight: 500; }
-        .nb-proj-mid { display: flex; flex-direction: column; gap: 5px; }
-        .nb-proj-name { font-family: var(--display); font-weight: 500;
-          font-size: clamp(30px, 4vw, 60px); line-height: 1; letter-spacing: -.035em;
-          transition: transform .3s cubic-bezier(.16,1,.3,1); }
-        .nb-proj-head:hover .nb-proj-name { transform: translateX(10px); }
-        .nb-proj-meta { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
-        .nb-proj-toggle { width: 46px; height: 46px; border-radius: 50%;
-          border: 1px solid var(--line); background: var(--bg); display: flex;
-          align-items: center; justify-content: center; flex-shrink: 0;
-          transition: all .35s cubic-bezier(.16,1,.3,1); }
-        .nb-proj.open .nb-proj-toggle { transform: rotate(135deg); }
-
-        .nb-drawer { display: grid; grid-template-rows: 0fr;
-          transition: grid-template-rows .55s cubic-bezier(.16,1,.3,1); }
-        .nb-proj.open .nb-drawer { grid-template-rows: 1fr; }
-        .nb-drawer-inner { overflow: hidden; }
-        .nb-drawer-pad { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px;
-          padding: 6px 8px 52px; }
         .nb-media { aspect-ratio: 16/10; border-radius: 4px; display: flex;
           align-items: center; justify-content: center; flex-direction: column;
           gap: 14px; position: relative; overflow: hidden; }
@@ -862,8 +933,7 @@ export default function Portfolio() {
           width: 110px; flex-shrink: 0; padding-top: 2px; }
         .nb-credit-v { font-size: 14px; font-weight: 500; }
 
-        /* ---------- gallery layout (loose-pieces first) ---------- */
-        .nb-drawer-pad.gallery { display: block; padding: 12px 8px 56px; }
+        /* ---------- gallery blocks inside an open case ---------- */
         .nb-block { margin-bottom: 40px; }
         .nb-block:last-of-type { margin-bottom: 32px; }
         .nb-block-label { font-family: var(--mono); font-size: 12px;
@@ -880,20 +950,9 @@ export default function Portfolio() {
         }
         .nb-gallery-cell:hover { transform: translateY(-3px); }
         .nb-gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .nb-gallery-placeholder { display: flex; flex-direction: column;
-          align-items: center; justify-content: center; gap: 8px;
-          padding: 18px; text-align: center; }
-        .nb-gallery-num { font-family: var(--display); font-weight: 600;
-          font-size: clamp(36px, 5vw, 60px); letter-spacing: -.04em;
-          line-height: 1; }
-        .nb-gallery-hint { font-family: var(--mono); font-size: 11px;
-          color: var(--ink-faint); letter-spacing: .03em; }
         .nb-board { border-radius: 4px; overflow: hidden;
           border: 1px solid var(--line); background: var(--bg-2); }
         .nb-board img { width: 100%; height: auto; display: block; }
-        .nb-gallery-copy { margin-top: 8px; max-width: 880px; }
-        .nb-gallery-copy .nb-drawer-copy { display: block; }
-        .nb-gallery-copy .nb-metrics { grid-template-columns: repeat(4, 1fr); }
 
         /* ---------- back link ---------- */
         .nb-backlink { display: inline-flex; align-items: center; gap: 10px;
@@ -1135,8 +1194,90 @@ export default function Portfolio() {
         .nb-footer-ai::before { content: ""; width: 6px; height: 6px;
           border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
+        /* ---------- results band ---------- */
+        .nb-results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+          background: var(--line); border: 1px solid var(--line); }
+        .nb-result { background: var(--bg); padding: clamp(22px, 2.6vw, 34px) clamp(18px, 2vw, 26px); }
+        .nb-result-v { font-family: var(--display); font-weight: 600;
+          font-size: clamp(38px, 4.6vw, 66px); letter-spacing: -.045em; line-height: .95; }
+        .nb-result-l { font-family: var(--mono); font-size: 11.5px; color: var(--ink-soft);
+          margin-top: 12px; line-height: 1.45; max-width: 22ch; }
+
+        /* ---------- project cards ---------- */
+        .nb-cards { display: grid; grid-template-columns: repeat(3, 1fr);
+          gap: clamp(16px, 1.8vw, 24px); }
+        .nb-card { text-align: left; background: var(--bg-2); border: 1px solid var(--line);
+          border-radius: 6px; overflow: hidden; padding: 0; display: flex;
+          flex-direction: column; align-self: start;
+          transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .25s, box-shadow .4s; }
+        .nb-card:hover { transform: translateY(-4px); border-color: var(--ink);
+          box-shadow: 0 20px 44px rgba(0,0,0,.08); }
+        .nb-card.is-open { border-color: var(--ink); }
+        .nb-card-media { aspect-ratio: 16/10; position: relative; overflow: hidden;
+          background: var(--line-soft); flex-shrink: 0; }
+        .nb-card-media img { width: 100%; height: 100%; object-fit: cover; display: block;
+          transition: transform .7s cubic-bezier(.16,1,.3,1); }
+        .nb-card:hover .nb-card-media img { transform: scale(1.045); }
+        /* typographic fallback when a project has no image yet */
+        .nb-card-media.blank { display: flex; align-items: flex-end; padding: 18px; }
+        .nb-card-media.blank .initial { font-family: var(--display); font-weight: 600;
+          font-size: clamp(56px, 7vw, 92px); letter-spacing: -.05em; line-height: .8;
+          opacity: .9; }
+        .nb-card-badge { position: absolute; top: 12px; left: 12px; font-family: var(--mono);
+          font-size: 10px; letter-spacing: .07em; text-transform: uppercase;
+          padding: 6px 11px; border-radius: 999px; background: rgba(18,18,15,.78);
+          color: #fff; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+        .nb-card-play { position: absolute; bottom: 12px; right: 12px; width: 40px; height: 40px;
+          border-radius: 50%; background: rgba(255,255,255,.94); display: flex;
+          align-items: center; justify-content: center;
+          transition: transform .35s cubic-bezier(.16,1,.3,1); }
+        .nb-card:hover .nb-card-play { transform: scale(1.1); }
+        .nb-card-body { padding: 20px 20px 22px; display: flex; flex-direction: column;
+          gap: 11px; flex: 1; }
+        .nb-card-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
+          letter-spacing: .02em; }
+        .nb-card-name { font-family: var(--display); font-weight: 500;
+          font-size: clamp(25px, 2.5vw, 34px); letter-spacing: -.035em; line-height: 1.02; }
+        .nb-card-pitch { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
+        .nb-card-nums { display: flex; gap: 20px; margin-top: auto; padding-top: 15px;
+          border-top: 1px solid var(--line-soft); }
+        .nb-card-num-v { font-family: var(--display); font-weight: 600; font-size: 26px;
+          letter-spacing: -.035em; line-height: 1; }
+        .nb-card-num-l { font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint);
+          margin-top: 6px; line-height: 1.35; }
+        .nb-card-foot { display: flex; align-items: center; gap: 8px; margin-top: auto;
+          padding-top: 15px; border-top: 1px solid var(--line-soft);
+          font-family: var(--mono); font-size: 11px; color: var(--ink-faint); }
+        .nb-card-foot .sign { transition: transform .3s; }
+        .nb-card:hover .nb-card-foot .sign { transform: translateX(3px); }
+
+        /* ---------- expanded case panel ---------- */
+        .nb-case { grid-column: 1 / -1; border: 1px solid var(--ink);
+          border-radius: 6px; background: var(--bg-2);
+          padding: clamp(20px, 2.6vw, 36px);
+          animation: caseIn .5s cubic-bezier(.16,1,.3,1); }
+        @keyframes caseIn { from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: none; } }
+        .nb-case-grid { display: grid; grid-template-columns: 1.05fr 1fr;
+          gap: clamp(24px, 3vw, 44px); }
+        .nb-case-grid.stacked { grid-template-columns: 1fr; }
+        .nb-case-top { display: flex; justify-content: space-between; align-items: baseline;
+          gap: 20px; margin-bottom: 22px; flex-wrap: wrap; }
+        .nb-case-title { font-family: var(--display); font-weight: 500;
+          font-size: clamp(28px, 3.2vw, 44px); letter-spacing: -.035em; line-height: 1; }
+        .nb-case-close { font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
+          background: transparent; border: 1px solid var(--line); border-radius: 999px;
+          padding: 7px 14px; display: inline-flex; align-items: center; gap: 8px;
+          transition: color .2s, border-color .2s; white-space: nowrap; }
+        .nb-case-close:hover { color: var(--accent); border-color: var(--accent); }
+        .nb-case .nb-drawer-copy p { font-size: 16px; }
+        .nb-case .nb-board { margin-top: 24px; }
+
         /* ---------- responsive ---------- */
         @media (max-width: 1080px) {
+          .nb-cards { grid-template-columns: repeat(2, 1fr); }
+          .nb-results { grid-template-columns: repeat(2, 1fr); }
+          .nb-case-grid { grid-template-columns: 1fr; }
           .nb-about-grid { grid-template-columns: 1fr; gap: 40px; }
           .nb-profile { grid-template-columns: 1fr; gap: 32px; }
           .nb-path-item { grid-template-columns: 130px 1fr; gap: 8px 24px; }
@@ -1151,16 +1292,12 @@ export default function Portfolio() {
           .nb-hero { min-height: 92svh; padding-top: 110px; }
           .nb-hero-bottom { flex-direction: column; align-items: flex-start; gap: 30px; }
           .nb-pillars { grid-template-columns: 1fr; }
-          .nb-proj-head { grid-template-columns: 40px 1fr auto; gap: 14px; padding: 22px 4px; }
-          .nb-proj-head:hover { padding-left: 4px; padding-right: 4px; }
-          .nb-proj-head:hover .nb-proj-name { transform: none; }
-          .nb-drawer-pad { grid-template-columns: 1fr; gap: 24px; padding-bottom: 36px; }
           .nb-awards { grid-template-columns: 1fr; }
           .nb-caps { grid-template-columns: 1fr; }
           .nb-contact-grid { grid-template-columns: 1fr; gap: 36px; }
           .nb-metrics { grid-template-columns: 1fr 1fr; }
           .nb-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-          .nb-gallery-copy .nb-metrics { grid-template-columns: 1fr 1fr; }
+          .nb-cards { grid-template-columns: 1fr; }
           .nb-marquee-track { animation-duration: 24s; }
           .nb-band { padding: 40px 26px; }
           .nb-more-head { grid-template-columns: 32px 1fr auto; gap: 14px; padding: 22px 4px; }
@@ -1238,23 +1375,7 @@ export default function Portfolio() {
             </div>
           </section>
 
-          {/* approach */}
-          <section className="nb-section nb-wrap">
-            <div className="nb-kicker rv">{t.approach.kicker}</div>
-            {t.approach.title && (
-              <h2 className="nb-approach-title rv d1">{t.approach.title}</h2>
-            )}
-            <div className="nb-pillars rv d2">
-              {t.approach.items.map((p, i) => (
-                <div className="nb-pillar" key={i}>
-                  <h3 className="nb-pillar-title">{p.title}</h3>
-                  <p className="nb-pillar-body">{p.body}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* brands — moved up, right after approach */}
+          {/* brands — first thing after the hero now that approach moved to About */}
           <section className="nb-section nb-wrap tight">
             <div className="nb-strip-label rv" style={{ marginTop: 0 }}>{t.recognition.clientsLabel}</div>
             <div className="nb-marquee rv">
@@ -1273,16 +1394,7 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="rv d1" style={{ marginTop: 34 }}>
-              {t.work.items.slice(0, 4).map((proj, i) => (
-                <ProjectRow
-                  key={i}
-                  proj={proj}
-                  index={i}
-                  ac={accents[i]}
-                  open={openProject === i}
-                  onToggle={() => setOpenProject(openProject === i ? null : i)}
-                />
-              ))}
+              <ProjectGrid items={homeHighlights} />
             </div>
             <div className="nb-worklink rv d1">
               <button className="nb-bigcta" onClick={() => nav("work")}>
@@ -1363,20 +1475,17 @@ export default function Portfolio() {
             <div className="nb-pagehero-sub rv d2">{t.workpage.sub}</div>
           </section>
 
-          {/* featured projects — full drawers */}
+          {/* results up front — the numbers sell before any copy does */}
+          <section className="nb-section nb-wrap tight" style={{ paddingTop: "clamp(20px,3vh,36px)" }}>
+            <div className="nb-sub rv">{t.work.resultsLabel}</div>
+            <ResultsBand />
+          </section>
+
+          {/* featured projects — visual cards, case opens in place */}
           <section className="nb-section nb-wrap tight">
             <div className="nb-sub rv">{t.workpage.featuredLabel}</div>
             <div className="rv d1">
-              {t.work.items.map((proj, i) => (
-                <ProjectRow
-                  key={i}
-                  proj={proj}
-                  index={i}
-                  ac={accents[i % accents.length]}
-                  open={openProject === i}
-                  onToggle={() => setOpenProject(openProject === i ? null : i)}
-                />
-              ))}
+              <ProjectGrid items={t.work.items} />
             </div>
           </section>
 
@@ -1501,7 +1610,20 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* capabilities — right after the bio */}
+            {/* approach — moved here from the home page */}
+            <div style={{ marginTop: "clamp(40px,5vh,72px)" }}>
+              <div className="nb-sub rv">{t.approach.kicker}</div>
+              <div className="nb-pillars rv d1" style={{ marginTop: 18 }}>
+                {t.approach.items.map((p, i) => (
+                  <div className="nb-pillar" key={i}>
+                    <h3 className="nb-pillar-title">{p.title}</h3>
+                    <p className="nb-pillar-body">{p.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* capabilities — right after the approach */}
             <div style={{ marginTop: "clamp(40px,5vh,72px)" }}>
               <div className="nb-sub rv">{t.about.capsLabel}</div>
               <div className="nb-caps rv d1">
