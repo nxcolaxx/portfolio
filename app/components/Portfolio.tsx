@@ -21,6 +21,195 @@ import React, { useState, useEffect, useCallback } from "react";
 
 const PORTRAIT_URL = "/nicolas.jpg"; // e.g. "/nicolas.jpg" once hosted
 
+/* ============================================================
+   These live at module scope on purpose. Defined inside Portfolio,
+   every render created a new component type, so React unmounted and
+   remounted the whole grid — images and YouTube iframes included —
+   each time a case was opened. That was the stutter.
+   ============================================================ */
+
+/* card thumbnail: explicit thumb, an image, or the YouTube still */
+const thumbOf = (proj) =>
+  proj.thumb || proj.image ||
+  (proj.youtube ? `https://img.youtube.com/vi/${proj.youtube}/maxresdefault.jpg` : null);
+
+/* a metric only reads as a headline number if it actually has a digit */
+const hasNumbers = (proj) => Boolean(proj.metrics?.[0] && /\d/.test(proj.metrics[0].v));
+
+/* the visual card: image, one-line pitch, two headline numbers */
+const ProjectCard = ({ proj, ac, open, onToggle, openLabel, closeLabel }) => {
+  const thumb = thumbOf(proj);
+  return (
+    <button className={"nb-card" + (open ? " is-open" : "")} onClick={onToggle} aria-expanded={open}>
+      <div className={"nb-card-media" + (thumb ? "" : " blank")}
+        style={thumb ? {} : { background: ac + "1f", color: ac }}>
+        {thumb ? (
+          <img src={thumb} alt={proj.title} loading="lazy" decoding="async" />
+        ) : (
+          <span className="initial">{proj.title.charAt(0)}</span>
+        )}
+        {proj.badge && <span className="nb-card-badge">{proj.badge}</span>}
+        {proj.youtube && (
+          <span className="nb-card-play">
+            <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+              <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#1a1a17" />
+            </svg>
+          </span>
+        )}
+      </div>
+      <div className="nb-card-body">
+        <div className="nb-card-meta">{proj.meta}</div>
+        <div className="nb-card-name">{proj.title}</div>
+        <p className="nb-card-pitch">{proj.pitch}</p>
+        <div className="nb-card-nums">
+          {hasNumbers(proj) ? (
+            proj.metrics.slice(0, 2).map((m, k) => (
+              <div key={k}>
+                <div className="nb-card-num-v" style={{ color: ac }}>{m.v}</div>
+                <div className="nb-card-num-l">{m.l}</div>
+              </div>
+            ))
+          ) : (
+            <div className="nb-tags" style={{ marginBottom: 0 }}>
+              {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
+            </div>
+          )}
+        </div>
+        <div className="nb-card-foot">
+          <span className="sign" style={{ color: ac }}>{open ? "—" : "+"}</span>
+          {open ? closeLabel : openLabel}
+        </div>
+      </div>
+    </button>
+  );
+};
+
+/* the full case, opened in place under the card */
+const CaseDetail = ({ proj, ac, labels, onClose }) => {
+  const hasBoard = Boolean(proj.boardImage);
+  const copyBlock = (
+    <div className="nb-drawer-copy">
+      <div className="nb-tags">
+        {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
+      </div>
+      <p>{proj.p1}</p>
+      <p>{proj.p2}</p>
+      {proj.metrics && (
+        <div className="nb-metrics">
+          {proj.metrics.map((m, k) => (
+            <div className="nb-metric" key={k}>
+              <div className="nb-metric-v" style={{ color: ac }}>{m.v}</div>
+              <div className="nb-metric-l">{m.l}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      <div className="nb-credit">
+        <div className="nb-credit-row">
+          <span className="nb-credit-k">{labels.roleLabel}</span>
+          <span className="nb-credit-v">{proj.role}</span>
+        </div>
+        {proj.recognition && (
+          <div className="nb-credit-row">
+            <span className="nb-credit-k">{labels.recogLabel}</span>
+            <span className="nb-credit-v">{proj.recognition}</span>
+          </div>
+        )}
+        {proj.partners && (
+          <div className="nb-credit-row">
+            <span className="nb-credit-k">{labels.partnersLabel}</span>
+            <span className="nb-credit-v">{proj.partners}</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="nb-case">
+      <div className="nb-case-top">
+        <div className="nb-case-title">{proj.title}</div>
+        <button className="nb-case-close" onClick={onClose}>
+          {labels.closeLabel} <span style={{ fontSize: 13, lineHeight: 1 }}>✕</span>
+        </button>
+      </div>
+      <div className={"nb-case-grid" + (hasBoard ? " stacked" : "")}>
+        {proj.youtube ? (
+          <div className="nb-media has-embed">
+            <iframe
+              src={`https://www.youtube.com/embed/${proj.youtube}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
+            />
+          </div>
+        ) : !hasBoard ? (
+          <div className="nb-media" style={{ background: ac + "1f" }}>
+            <span className="play" style={{ background: ac }}>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#fff" />
+              </svg>
+            </span>
+            <span className="play-label" style={{ color: ac }}>{labels.videoLabel}</span>
+          </div>
+        ) : null}
+        {copyBlock}
+      </div>
+      {proj.boardImage && (
+        <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
+          <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
+          {/* width/height reserve the row so the panel does not jump when it decodes */}
+          <div className="nb-board">
+            <img
+              src={proj.boardImage}
+              alt={`${proj.title} — board`}
+              width={proj.boardW}
+              height={proj.boardH}
+              decoding="async"
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+/* card grid; the open case takes a full-width row under its card */
+const ProjectGrid = ({ items, accents, openIndex, onToggle, labels }) => (
+  <div className="nb-cards">
+    {items.map((proj, i) => {
+      const ac = accents[i % accents.length];
+      const open = openIndex === i;
+      return (
+        <React.Fragment key={proj.title}>
+          <ProjectCard
+            proj={proj}
+            ac={ac}
+            open={open}
+            onToggle={() => onToggle(open ? null : i)}
+            openLabel={labels.openLabel}
+            closeLabel={labels.closeLabel}
+          />
+          {open && (
+            <CaseDetail proj={proj} ac={ac} labels={labels} onClose={() => onToggle(null)} />
+          )}
+        </React.Fragment>
+      );
+    })}
+  </div>
+);
+
+const ResultsBand = ({ results, accents }) => (
+  <div className="nb-results rv d1">
+    {results.map((r, i) => (
+      <div className="nb-result" key={i}>
+        <div className="nb-result-v" style={{ color: accents[i % accents.length] }}>{r.v}</div>
+        <div className="nb-result-l">{r.l}</div>
+      </div>
+    ))}
+  </div>
+);
+
 export default function Portfolio() {
   const [lang, setLang] = useState("en");
   const [page, setPage] = useState("home");
@@ -68,7 +257,7 @@ export default function Portfolio() {
         resultsLabel: "Results, in short",
         results: [
           { v: "67M", l: "views on campaign films" },
-          { v: "17.2M", l: "impressions in merchandising" },
+          { v: "39M", l: "impacts across a single World Cup run" },
           { v: "24×", l: "the healthcare category benchmark" },
           { v: "3", l: "international creative awards" },
         ],
@@ -76,6 +265,7 @@ export default function Portfolio() {
           {
             title: "Hidden Words",
             meta: "Sanofi · Greenpark · 2024",
+            home: true,
             tags: ["Real-time", "AI", "Healthcare"],
             pitch: "Caught a micro-trend and turned it into six brand campaigns in days — 24× the category benchmark.",
             badge: "2 awards",
@@ -91,7 +281,27 @@ export default function Portfolio() {
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
             thumb: "/hw-card.jpg",
             boardImage: "/hw-board.jpg",
+            boardW: 2000,
+            boardH: 1419,
             boardLabel: "The board — full layout",
+          },
+          {
+            title: "Hacking the World Cup",
+            home: true,
+            meta: "Claro Brasil · Talent · 2026",
+            tags: ["Influencers", "Sports", "Product launch"],
+            pitch: "220 creators hijacked the World Cup for Claro — 500+ pieces, 39M impacts.",
+            p1: "The World Cup belongs to whoever shows up loudest. Claro arrived with 220 influencer names at once and used the tournament to land a product message: the new 5G and Claro Multi benefits.",
+            p2: "More than 500 pieces of content built around the calendar of the games, turning a product announcement into something the audience followed like part of the tournament itself.",
+            metrics: [
+              { v: "39M", l: "impacts" },
+              { v: "37M", l: "impressions" },
+              { v: "1.3M", l: "organic views" },
+              { v: "500+", l: "content pieces" },
+              { v: "220", l: "influencer names" },
+              { v: "160K", l: "organic interactions" },
+            ],
+            role: "Influencer strategy & content direction",
           },
           {
             title: "Rio Open",
@@ -128,6 +338,7 @@ export default function Portfolio() {
           {
             title: "Loft",
             meta: "BFerraz · 2025",
+            home: true,
             tags: ["Social strategy", "Creative", "Brand campaign"],
             pitch: "A B2C2B repositioning with Angélica and Luciano Huck that pulled 67M views.",
             badge: "AMPRO Silver",
@@ -292,7 +503,7 @@ export default function Portfolio() {
         resultsLabel: "Resultados, em resumo",
         results: [
           { v: "67MM", l: "de views em filmes de campanha" },
-          { v: "17,2MM", l: "de impactos em merchandising" },
+          { v: "39MM", l: "de impactos numa só Copa do Mundo" },
           { v: "24×", l: "o benchmark da categoria de saúde" },
           { v: "3", l: "prêmios internacionais de criação" },
         ],
@@ -300,6 +511,7 @@ export default function Portfolio() {
           {
             title: "Hidden Words",
             meta: "Sanofi · Greenpark · 2024",
+            home: true,
             tags: ["Tempo real", "IA", "Saúde"],
             pitch: "Peguei uma microtendência e virei seis campanhas de marca em dias — 24× o benchmark da categoria.",
             badge: "2 prêmios",
@@ -315,7 +527,27 @@ export default function Portfolio() {
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
             thumb: "/hw-card.jpg",
             boardImage: "/hw-board.jpg",
+            boardW: 2000,
+            boardH: 1419,
             boardLabel: "O board — layout completo",
+          },
+          {
+            title: "Hackeando a Copa",
+            home: true,
+            meta: "Claro Brasil · Talent · 2026",
+            tags: ["Influenciadores", "Esportes", "Lançamento de produto"],
+            pitch: "220 criadores hackearam a Copa do Mundo pela Claro — 500+ conteúdos, 39MM de impactos.",
+            p1: "Copa é de quem aparece mais alto. A Claro chegou com 220 nomes de influenciador de uma vez e usou o torneio pra entregar uma mensagem de produto: os novos benefícios do 5G e do Claro Multi.",
+            p2: "Mais de 500 conteúdos montados em cima do calendário dos jogos — transformando anúncio de produto em algo que a audiência acompanhou como parte do próprio torneio.",
+            metrics: [
+              { v: "39MM", l: "de impactos" },
+              { v: "37MM", l: "de impressões" },
+              { v: "1,3MM", l: "de views orgânicas" },
+              { v: "500+", l: "conteúdos criados" },
+              { v: "220", l: "nomes de influenciador" },
+              { v: "160K", l: "interações orgânicas" },
+            ],
+            role: "Estratégia de influenciadores e direção de conteúdo",
           },
           {
             title: "Rio Open",
@@ -352,6 +584,7 @@ export default function Portfolio() {
           {
             title: "Loft",
             meta: "BFerraz · 2025",
+            home: true,
             tags: ["Estratégia de social", "Criação", "Campanha de marca"],
             pitch: "Um reposicionamento B2C2B com Angélica e Luciano Huck que rendeu 67MM de views.",
             badge: "AMPRO Prata",
@@ -484,8 +717,9 @@ export default function Portfolio() {
   };
 
   const t = copy[lang];
-  // home leads with the three that sell hardest: awards, 67M views, Claro
-  const homeHighlights = [t.work.items[0], t.work.items[3], t.work.items[1]];
+  // home leads with the three flagged in the copy — by flag, not by index,
+  // so adding or reordering a case can't silently change the highlights
+  const homeHighlights = t.work.items.filter((p) => p.home);
   const clients = ["Claro", "Neutrogena", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
   const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora", "Vic Hollo", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
 
@@ -531,179 +765,6 @@ export default function Portfolio() {
     setMenuOpen(false);
     setPage(p);
   };
-
-  /* ---- card thumbnail: YouTube still, explicit thumb, or nothing ---- */
-  const thumbOf = (proj) =>
-    proj.thumb || proj.image ||
-    (proj.youtube ? `https://img.youtube.com/vi/${proj.youtube}/maxresdefault.jpg` : null);
-
-  /* ---- a metric only reads as a headline number if it has a digit ---- */
-  const hasNumbers = (proj) => Boolean(proj.metrics?.[0] && /\d/.test(proj.metrics[0].v));
-
-  /* ---- the visual card: image, one-line pitch, two headline numbers ---- */
-  const ProjectCard = ({ proj, ac, open, onToggle }) => {
-    const thumb = thumbOf(proj);
-    return (
-      <button className={"nb-card" + (open ? " is-open" : "")} onClick={onToggle} aria-expanded={open}>
-        <div className={"nb-card-media" + (thumb ? "" : " blank")}
-          style={thumb ? {} : { background: ac + "1f", color: ac }}>
-          {thumb ? (
-            <img src={thumb} alt={proj.title} loading="lazy" />
-          ) : (
-            <span className="initial">{proj.title.charAt(0)}</span>
-          )}
-          {proj.badge && <span className="nb-card-badge">{proj.badge}</span>}
-          {proj.youtube && (
-            <span className="nb-card-play">
-              <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-                <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#1a1a17" />
-              </svg>
-            </span>
-          )}
-        </div>
-        <div className="nb-card-body">
-          <div className="nb-card-meta">{proj.meta}</div>
-          <div className="nb-card-name">{proj.title}</div>
-          <p className="nb-card-pitch">{proj.pitch}</p>
-          {hasNumbers(proj) ? (
-            <div className="nb-card-nums">
-              {proj.metrics.slice(0, 2).map((m, k) => (
-                <div key={k}>
-                  <div className="nb-card-num-v" style={{ color: ac }}>{m.v}</div>
-                  <div className="nb-card-num-l">{m.l}</div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="nb-card-nums">
-              <div className="nb-tags" style={{ marginBottom: 0 }}>
-                {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
-              </div>
-            </div>
-          )}
-          <div className="nb-card-foot">
-            <span className="sign" style={{ color: ac }}>{open ? "—" : "+"}</span>
-            {open ? t.work.closeLabel : t.work.openLabel}
-          </div>
-        </div>
-      </button>
-    );
-  };
-
-  /* ---- the full case, opened in place under the card ---- */
-  const CaseDetail = ({ proj, ac, onClose }) => {
-    const hasBoard = Boolean(proj.boardImage);
-    const copyBlock = (
-      <div className="nb-drawer-copy">
-        <div className="nb-tags">
-          {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
-        </div>
-        <p>{proj.p1}</p>
-        <p>{proj.p2}</p>
-        {proj.metrics && (
-          <div className="nb-metrics">
-            {proj.metrics.map((m, k) => (
-              <div className="nb-metric" key={k}>
-                <div className="nb-metric-v" style={{ color: ac }}>{m.v}</div>
-                <div className="nb-metric-l">{m.l}</div>
-              </div>
-            ))}
-          </div>
-        )}
-        <div className="nb-credit">
-          <div className="nb-credit-row">
-            <span className="nb-credit-k">{t.work.roleLabel}</span>
-            <span className="nb-credit-v">{proj.role}</span>
-          </div>
-          {proj.recognition && (
-            <div className="nb-credit-row">
-              <span className="nb-credit-k">{t.work.recogLabel}</span>
-              <span className="nb-credit-v">{proj.recognition}</span>
-            </div>
-          )}
-          {proj.partners && (
-            <div className="nb-credit-row">
-              <span className="nb-credit-k">{t.work.partnersLabel}</span>
-              <span className="nb-credit-v">{proj.partners}</span>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-
-    return (
-      <div className="nb-case">
-        <div className="nb-case-top">
-          <div className="nb-case-title">{proj.title}</div>
-          <button className="nb-case-close" onClick={onClose}>
-            {t.work.closeLabel} <span style={{ fontSize: 13, lineHeight: 1 }}>✕</span>
-          </button>
-        </div>
-        <div className={"nb-case-grid" + (hasBoard ? " stacked" : "")}>
-          {proj.youtube ? (
-            <div className="nb-media has-embed">
-              <iframe
-                src={`https://www.youtube.com/embed/${proj.youtube}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
-              />
-            </div>
-          ) : !hasBoard ? (
-            <div className="nb-media" style={{ background: ac + "1f" }}>
-              <span className="play" style={{ background: ac }}>
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#fff" />
-                </svg>
-              </span>
-              <span className="play-label" style={{ color: ac }}>{t.work.videoLabel}</span>
-            </div>
-          ) : null}
-          {copyBlock}
-        </div>
-        {proj.boardImage && (
-          <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
-            <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
-            <div className="nb-board">
-              <img src={proj.boardImage} alt={`${proj.title} — board`} loading="lazy" />
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  /* ---- card grid; the open case takes a full-width row under its card ---- */
-  const ProjectGrid = ({ items }) => (
-    <div className="nb-cards">
-      {items.map((proj, i) => {
-        const ac = accents[i % accents.length];
-        const open = openProject === i;
-        return (
-          <React.Fragment key={i}>
-            <ProjectCard
-              proj={proj}
-              ac={ac}
-              open={open}
-              onToggle={() => setOpenProject(open ? null : i)}
-            />
-            {open && <CaseDetail proj={proj} ac={ac} onClose={() => setOpenProject(null)} />}
-          </React.Fragment>
-        );
-      })}
-    </div>
-  );
-
-  const ResultsBand = () => (
-    <div className="nb-results rv d1">
-      {t.work.results.map((r, i) => (
-        <div className="nb-result" key={i}>
-          <div className="nb-result-v" style={{ color: accents[i % accents.length] }}>{r.v}</div>
-          <div className="nb-result-l">{r.l}</div>
-        </div>
-      ))}
-    </div>
-  );
 
   return (
     <div className="nb">
@@ -899,12 +960,11 @@ export default function Portfolio() {
         .nb-block { margin-bottom: 40px; }
         .nb-block:last-of-type { margin-bottom: 32px; }
         .nb-block-label { font-family: var(--mono); font-size: 12px;
-          letter-spacing: .04em; margin-bottom: 18px; display: flex;
-          align-items: center; gap: 12px; }
-        .nb-block-label::after { content: ""; flex: 1; height: 1px;
-          background: var(--line); }
+          letter-spacing: .04em; margin-bottom: 16px; }
         .nb-board { border-radius: 4px; overflow: hidden;
           border: 1px solid var(--line); background: var(--bg-2); }
+        /* width/height attrs on the img give the browser the intrinsic ratio,
+           so the row keeps its height before the image decodes */
         .nb-board img { width: 100%; height: auto; display: block; }
 
         /* ---------- back link ---------- */
@@ -1048,11 +1108,13 @@ export default function Portfolio() {
         .nb-about-body p { font-family: var(--display); font-weight: 400;
           font-size: clamp(18px, 1.65vw, 23px); line-height: 1.46; letter-spacing: -.012em;
           margin-bottom: 22px; max-width: 56ch; }
-        .nb-about-body p:last-child { color: var(--ink-soft); }
+        .nb-about-body > p:last-of-type { color: var(--ink-soft); }
+        .nb-now-block { margin-top: 34px; padding-top: 26px;
+          border-top: 1px solid var(--line); }
+        /* sub-labels carry no rule line — only the top-level kicker does,
+           otherwise every section stacks its own stray horizontal line */
         .nb-sub { font-family: var(--mono); font-size: 12px; color: var(--accent);
-          letter-spacing: .03em; margin-bottom: 26px; display: flex;
-          align-items: center; gap: 12px; }
-        .nb-sub::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+          letter-spacing: .03em; margin-bottom: 22px; }
         .nb-path-intro { font-family: var(--display); font-weight: 400;
           font-size: clamp(22px, 2.6vw, 34px); letter-spacing: -.02em;
           color: var(--ink-soft); margin-bottom: 36px; max-width: 20ch; }
@@ -1198,8 +1260,9 @@ export default function Portfolio() {
           letter-spacing: -.035em; line-height: 1; }
         .nb-card-num-l { font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint);
           margin-top: 6px; line-height: 1.35; }
-        .nb-card-foot { display: flex; align-items: center; gap: 8px; margin-top: auto;
-          padding-top: 15px; border-top: 1px solid var(--line-soft);
+        /* no rule above the foot — the numbers block already draws one just above it */
+        .nb-card-foot { display: flex; align-items: center; gap: 8px;
+          padding-top: 13px;
           font-family: var(--mono); font-size: 11px; color: var(--ink-faint); }
         .nb-card-foot .sign { transition: transform .3s; }
         .nb-card:hover .nb-card-foot .sign { transform: translateX(3px); }
@@ -1346,7 +1409,13 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="rv d1" style={{ marginTop: 34 }}>
-              <ProjectGrid items={homeHighlights} />
+              <ProjectGrid
+                items={homeHighlights}
+                accents={accents}
+                openIndex={openProject}
+                onToggle={setOpenProject}
+                labels={t.work}
+              />
             </div>
             <div className="nb-worklink rv d1">
               <button className="nb-bigcta" onClick={() => nav("work")}>
@@ -1420,7 +1489,6 @@ export default function Portfolio() {
             <button className="nb-backlink rv" onClick={() => nav("home")}>
               <span className="arr">←</span> {t.workpage.backHome}
             </button>
-            <div className="nb-kicker rv">{t.workpage.kicker}</div>
             <h1 className="nb-pagehero-name rv d1">
               {t.workpage.title}<span className="period">.</span>
             </h1>
@@ -1430,14 +1498,20 @@ export default function Portfolio() {
           {/* results up front — the numbers sell before any copy does */}
           <section className="nb-section nb-wrap tight" style={{ paddingTop: "clamp(20px,3vh,36px)" }}>
             <div className="nb-sub rv">{t.work.resultsLabel}</div>
-            <ResultsBand />
+            <ResultsBand results={t.work.results} accents={accents} />
           </section>
 
           {/* featured projects — visual cards, case opens in place */}
           <section className="nb-section nb-wrap tight">
             <div className="nb-sub rv">{t.workpage.featuredLabel}</div>
             <div className="rv d1">
-              <ProjectGrid items={t.work.items} />
+              <ProjectGrid
+                items={t.work.items}
+                accents={accents}
+                openIndex={openProject}
+                onToggle={setOpenProject}
+                labels={t.work}
+              />
             </div>
           </section>
 
@@ -1533,7 +1607,6 @@ export default function Portfolio() {
             <button className="nb-backlink rv" onClick={() => nav("home")}>
               <span className="arr">←</span> {t.workpage.backHome}
             </button>
-            <div className="nb-kicker rv">{t.about.kicker}</div>
             <h1 className="nb-pagehero-name rv d1">
               {lang === "en" ? "About" : "Sobre"}<span className="period">.</span>
             </h1>
@@ -1559,6 +1632,20 @@ export default function Portfolio() {
                 <p>{t.about.p1}</p>
                 <p>{t.about.p2}</p>
                 <p>{t.about.p3}</p>
+
+                {/* "now" sits with the bio so what he does today reads first */}
+                <div className="nb-now-block">
+                  <div className="nb-sub" style={{ marginBottom: 14 }}>{t.about.nowLabel}</div>
+                  <div className="nb-now">
+                    {t.about.now.map((n, i) => (
+                      <div className="nb-now-item" key={i}>
+                        <span className="arrow">→</span>
+                        <p>{n}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="nb-now-updated">{t.about.nowUpdated}</div>
+                </div>
               </div>
             </div>
 
@@ -1601,20 +1688,6 @@ export default function Portfolio() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* now */}
-            <div style={{ marginTop: "clamp(40px,5vh,72px)" }}>
-              <div className="nb-sub rv">{t.about.nowLabel}</div>
-              <div className="nb-now rv d1">
-                {t.about.now.map((n, i) => (
-                  <div className="nb-now-item" key={i}>
-                    <span className="arrow">→</span>
-                    <p>{n}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="nb-now-updated rv">{t.about.nowUpdated}</div>
             </div>
 
             <div style={{ marginTop: "clamp(32px, 4vh, 56px)" }}>
