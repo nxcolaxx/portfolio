@@ -89,10 +89,6 @@ export default function Portfolio() {
             ],
             role: "Creative & content strategy",
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
-            // gallery: replace nulls with image paths to populate the loose pieces.
-            // e.g. ["/hw-piece-1.jpg", "/hw-piece-2.jpg", ...]
-            gallery: [null, null, null, null, null, null],
-            galleryLabel: "The pieces",
             thumb: "/hw-card.jpg",
             boardImage: "/hw-board.jpg",
             boardLabel: "The board — full layout",
@@ -148,20 +144,6 @@ export default function Portfolio() {
             partners: "BFerraz · B&Partners",
             youtube: "zJxoSBI1XFU",
           },
-          {
-            title: "Longines Horse Show",
-            meta: "Prime You · Live Event",
-            tags: ["Live event", "Real-time", "Lead gen"],
-            pitch: "Real-time coverage of a high-visibility live event, built to convert presence into qualified leads.",
-            p1: "Prime You at the Longines Horse Show — a real-time content operation built for a high-visibility live event. Exclusive coverage positioned the brand inside a strategic environment, surrounded by its ideal audience.",
-            p2: "Activations and brand touchpoints turned event presence into measurable outcomes, generating qualified leads with potential clients throughout the show.",
-            metrics: [
-              { v: "Real-time", l: "exclusive event coverage" },
-              { v: "Peak", l: "brand visibility" },
-              { v: "Qualified", l: "leads with potential clients" },
-            ],
-            role: "Content strategy & real-time direction",
-          },
         ],
       },
       workpage: {
@@ -179,6 +161,12 @@ export default function Portfolio() {
         emptyMeta: "Next drop in production",
         backHome: "Back to home",
         more: [
+          {
+            title: "Longines Horse Show",
+            meta: "Prime You · Live Event",
+            tags: ["Live event", "Real-time", "Lead gen"],
+            line: "Real-time content operation for a high-visibility live event — exclusive coverage that turned brand presence into qualified leads with potential clients.",
+          },
           {
             title: "Nilpel",
             meta: "Consumer brand · Freelance · 2024 – now",
@@ -325,10 +313,6 @@ export default function Portfolio() {
             ],
             role: "Estratégia criativa e de conteúdo",
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
-            // gallery: troque os nulls por caminhos de imagens das peças soltas.
-            // ex.: ["/hw-piece-1.jpg", "/hw-piece-2.jpg", ...]
-            gallery: [null, null, null, null, null, null],
-            galleryLabel: "As peças",
             thumb: "/hw-card.jpg",
             boardImage: "/hw-board.jpg",
             boardLabel: "O board — layout completo",
@@ -384,20 +368,6 @@ export default function Portfolio() {
             partners: "BFerraz · B&Partners",
             youtube: "zJxoSBI1XFU",
           },
-          {
-            title: "Longines Horse Show",
-            meta: "Prime You · Evento ao Vivo",
-            tags: ["Evento ao vivo", "Tempo real", "Geração de leads"],
-            pitch: "Cobertura em tempo real de um evento de alta visibilidade, feita para virar lead qualificado.",
-            p1: "A Prime You no Longines Horse Show: uma operação de conteúdo em tempo real pensada pra um evento ao vivo de alta visibilidade. A cobertura exclusiva colocou a marca num ambiente estratégico, cercada do público certo.",
-            p2: "As ativações e os pontos de contato com a marca transformaram a presença no evento em resultado de verdade — gerando leads qualificados com potenciais clientes ao longo de todo o show.",
-            metrics: [
-              { v: "Tempo real", l: "cobertura exclusiva do evento" },
-              { v: "Pico", l: "de visibilidade da marca" },
-              { v: "Leads", l: "qualificados com potenciais clientes" },
-            ],
-            role: "Estratégia de conteúdo e direção em tempo real",
-          },
         ],
       },
       workpage: {
@@ -415,6 +385,12 @@ export default function Portfolio() {
         emptyMeta: "Próximo drop em produção",
         backHome: "Voltar para o início",
         more: [
+          {
+            title: "Longines Horse Show",
+            meta: "Prime You · Evento ao Vivo",
+            tags: ["Evento ao vivo", "Tempo real", "Geração de leads"],
+            line: "Operação de conteúdo em tempo real num evento ao vivo de alta visibilidade — cobertura exclusiva que transformou presença de marca em lead qualificado com potencial cliente.",
+          },
           {
             title: "Nilpel",
             meta: "Marca de consumo · Freelance · 2024 – atual",
@@ -616,9 +592,7 @@ export default function Portfolio() {
 
   /* ---- the full case, opened in place under the card ---- */
   const CaseDetail = ({ proj, ac, onClose }) => {
-    // only the pieces that actually have an image — empty slots stay hidden
-    const pieces = Array.isArray(proj.gallery) ? proj.gallery.filter(Boolean) : [];
-    const hasBoard = pieces.length > 0 || Boolean(proj.boardImage);
+    const hasBoard = Boolean(proj.boardImage);
     const copyBlock = (
       <div className="nb-drawer-copy">
         <div className="nb-tags">
@@ -687,18 +661,6 @@ export default function Portfolio() {
           ) : null}
           {copyBlock}
         </div>
-        {pieces.length > 0 && (
-          <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
-            <div className="nb-block-label" style={{ color: ac }}>{proj.galleryLabel}</div>
-            <div className="nb-gallery">
-              {pieces.map((src, k) => (
-                <div className="nb-gallery-cell" key={k}>
-                  <img src={src} alt={`${proj.title} — ${k + 1}`} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
         {proj.boardImage && (
           <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
             <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
@@ -933,7 +895,7 @@ export default function Portfolio() {
           width: 110px; flex-shrink: 0; padding-top: 2px; }
         .nb-credit-v { font-size: 14px; font-weight: 500; }
 
-        /* ---------- gallery blocks inside an open case ---------- */
+        /* ---------- board block inside an open case ---------- */
         .nb-block { margin-bottom: 40px; }
         .nb-block:last-of-type { margin-bottom: 32px; }
         .nb-block-label { font-family: var(--mono); font-size: 12px;
@@ -941,15 +903,6 @@ export default function Portfolio() {
           align-items: center; gap: 12px; }
         .nb-block-label::after { content: ""; flex: 1; height: 1px;
           background: var(--line); }
-        .nb-gallery { display: grid; grid-template-columns: repeat(3, 1fr);
-          gap: 18px; }
-        .nb-gallery-cell { aspect-ratio: 4/5; border-radius: 4px;
-          overflow: hidden; position: relative; background: var(--bg-2);
-          border: 1px dashed transparent; display: flex; align-items: center;
-          justify-content: center; transition: transform .35s cubic-bezier(.16,1,.3,1);
-        }
-        .nb-gallery-cell:hover { transform: translateY(-3px); }
-        .nb-gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .nb-board { border-radius: 4px; overflow: hidden;
           border: 1px solid var(--line); background: var(--bg-2); }
         .nb-board img { width: 100%; height: auto; display: block; }
@@ -1296,7 +1249,6 @@ export default function Portfolio() {
           .nb-caps { grid-template-columns: 1fr; }
           .nb-contact-grid { grid-template-columns: 1fr; gap: 36px; }
           .nb-metrics { grid-template-columns: 1fr 1fr; }
-          .nb-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
           .nb-cards { grid-template-columns: 1fr; }
           .nb-marquee-track { animation-duration: 24s; }
           .nb-band { padding: 40px 26px; }
