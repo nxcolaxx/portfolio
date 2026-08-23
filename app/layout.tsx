@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nicolas Bonati — Creative Strategist & Cultural Researcher",
-  description: "Creative Strategist & Cultural Researcher. Strategy with cultural depth. Content with intent.",
+  title: "Nicolas Bonati — Influence & Content Strategist",
+  description: "Influence and content strategist in São Paulo. Campaigns, content and creator partnerships for Neutrogena, Claro, Sanofi and Loft. Three creative awards.",
 };
 
 export default function RootLayout({

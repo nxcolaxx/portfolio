@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 /* ============================================================
    NICOLAS BONATI — PORTFOLIO  ·  v0.4  (multi-page)
-   Creative Strategist & Cultural Researcher
+   Influence & Content Strategist
    Pages: Home · Work · About · Contact
    Editorial-architectural · light · index-plus-drawer
    ============================================================
@@ -226,40 +226,40 @@ export default function Portfolio() {
     en: {
       nav: { home: "Home", work: "Work", about: "About", contact: "Contact" },
       hero: {
-        eyebrow: "Creative Strategist & Cultural Researcher",
+        eyebrow: "Influence & Content Strategist",
         name1: "Nicolas",
         name2: "Bonati",
-        tagline: "Strategy with cultural depth. Content with intent.",
-        metaA: "Talent — Neutrogena",
+        tagline: "Strategy, content and influencer curation. In that order.",
+        metaA: "Talent — Neutrogena Sun & Skin",
         metaB: "São Paulo, Brazil",
-        metaC: "Open to select projects",
+        metaC: "Open to projects and full-time roles",
         cue: "Selected work",
       },
       approach: {
         kicker: "Approach",
         title: "",
         items: [
-          { n: "i", title: "Creative Strategy", body: "From cultural insight to concept, with the rigor of someone who used to validate hypotheses for a living." },
-          { n: "ii", title: "Content Direction", body: "Concept, creation, campaign, production — leading teams end-to-end. From the idea to the post going live: real-time activations, launches and brand worlds with a creative point of view." },
-          { n: "iii", title: "Cultural Research", body: "Audience behavior, subcultures, micro-trends. The work that happens before the brief." },
+          { n: "i", title: "Influence Strategy", body: "Curation and the strategy that ties a creator to a product. I can tell real affinity with a brand from pure volume, and I defend the choice in front of the client." },
+          { n: "ii", title: "Creative Strategy", body: "Insight to concept, concept to a campaign that runs on every channel. I spent years validating hypotheses about behavior, so an idea gets tested before it turns into budget." },
+          { n: "iii", title: "Content Direction", body: "Concept, creative, production, delivery. I lead the team that takes it from a line on a deck to the post going live: real time, launches, whole brand worlds." },
         ],
       },
       work: {
         kicker: "Selected Work",
-        title: "Three projects, one obsession — making brands feel like culture.",
-        hint: "Tap a project to open the case",
+        title: "Five cases. Same method every time.",
+        hint: "Open a case. The numbers are inside",
         roleLabel: "Role",
         recogLabel: "Recognition",
         partnersLabel: "Partners",
         videoLabel: "video — coming soon",
         openLabel: "Open case",
         closeLabel: "Close case",
-        resultsLabel: "Results, in short",
+        resultsLabel: "The numbers, up front",
         results: [
           { v: "67M", l: "views on campaign films" },
-          { v: "39M", l: "impacts across a single World Cup run" },
-          { v: "24×", l: "the healthcare category benchmark" },
-          { v: "3", l: "international creative awards" },
+          { v: "39M", l: "impacts in a single World Cup" },
+          { v: "24×", l: "over the healthcare benchmark" },
+          { v: "3", l: "creative awards" },
         ],
         items: [
           {
@@ -267,10 +267,10 @@ export default function Portfolio() {
             meta: "Sanofi · Greenpark · 2024",
             home: true,
             tags: ["Real-time", "AI", "Healthcare"],
-            pitch: "Caught a micro-trend and turned it into six brand campaigns in days — 24× the category benchmark.",
+            pitch: "Spotted a micro-trend, shipped six brand campaigns off it in days, and beat the category benchmark 24 times over.",
             badge: "2 awards",
-            p1: `Sanofi Brazil's social strategy runs on social listening. When "hidden words AI" started trending on Google Trends, we moved fast — building a visual campaign tuned to the message and identity of six different brands.`,
-            p2: "More than 1,000 AI-generated images across six social posts. The campaign landed far above the healthcare category benchmark, turning a micro-trend into an award-winning real-time activation.",
+            p1: `Sanofi Brazil's social runs on listening. When "hidden words AI" started climbing Google Trends, the window was narrow: build one visual idea that could carry the message and the identity of six different brands at once, before the trend cooled.`,
+            p2: "More than 1,000 AI-generated images across six posts. Pharma is the category where nothing engages: the benchmark sits at 0.24%. We landed 5.8%, and the industry handed it two awards.",
             metrics: [
               { v: "5.8%", l: "avg. ERR per post — vs 0.24% category benchmark" },
               { v: "1,000+", l: "AI images generated" },
@@ -290,9 +290,9 @@ export default function Portfolio() {
             home: true,
             meta: "Claro Brasil · Talent · 2026",
             tags: ["Influencers", "Sports", "Product launch"],
-            pitch: "220 creators hijacked the World Cup for Claro — 500+ pieces, 39M impacts.",
-            p1: "The World Cup belongs to whoever shows up loudest. Claro arrived with 220 influencer names at once and used the tournament to land a product message: the new 5G and Claro Multi benefits.",
-            p2: "More than 500 pieces of content built around the calendar of the games, turning a product announcement into something the audience followed like part of the tournament itself.",
+            pitch: "220 creators hijacked the World Cup for Claro: 500+ pieces, 39M impacts.",
+            p1: "The World Cup belongs to whoever shows up loudest. Claro showed up with 220 influencer names at once and used the tournament to carry a product story: the new 5G and Claro Multi benefits.",
+            p2: "More than 500 pieces mapped to the game calendar. A product announcement is easy to scroll past. Something that shows up every match day, from the people you already follow, is not.",
             metrics: [
               { v: "39M", l: "impacts" },
               { v: "37M", l: "impressions" },
@@ -308,9 +308,9 @@ export default function Portfolio() {
             meta: "Claro Brasil · Talent · 2025",
             home: true,
             tags: ["Real-time", "Sports", "Brand"],
-            pitch: "Ten days of tennis turned into a non-stop content engine for Claro, reaching millions.",
-            p1: "Claro's presence at Latin America's biggest tennis event, covered in real time — strategy and creative direction across opportunity, real-time and big-activation fronts.",
-            p2: "Partnerships with @newballsplease and content featuring João Fonseca turned ten days of tennis into a continuous content engine reaching millions.",
+            pitch: "Ten days of tennis, 120+ pieces live, millions reached. Claro never left the conversation.",
+            p1: "Latin America's biggest tennis tournament, covered live for ten straight days. I ran strategy and creative direction across three fronts at once: opportunity, real time, and the big activations.",
+            p2: "A partnership with @newballsplease and content built around João Fonseca gave the brand something to say every day of the draw, not just on finals weekend.",
             metrics: [
               { v: "120+", l: "content pieces live" },
               { v: "Millions", l: "in total reach" },
@@ -325,9 +325,9 @@ export default function Portfolio() {
             home: true,
             meta: "Independent · Music Industry · 2024 – 25",
             tags: ["Music", "Social", "Growth"],
-            pitch: "Built an international artist's channel from zero to 8K fans in six months, shooting across three continents.",
-            p1: "An international music artist's channel, built from zero. I designed the creative direction and channel strategy, then a paid-media layer that funneled fans straight to her page.",
-            p2: "Production and direction of shootings across three continents — Asia, North America, Europe — anchored by a content system the audience actually wanted to follow.",
+            pitch: "An international artist's channel from zero to 8K fans and 12% engagement in six months. Shot across three continents.",
+            p1: "No audience, no back catalogue of content, no team. I built the creative direction and the channel strategy from nothing, then added a paid layer that pushed the right listeners straight onto her page.",
+            p2: "I produced and directed shoots in Asia, North America and Europe, all feeding one content system built to be followed, not just posted to. The channel held 12% average engagement the whole way.",
             metrics: [
               { v: "+8K", l: "organic followers in 6 months" },
               { v: "12%", l: "avg. engagement rate" },
@@ -342,10 +342,10 @@ export default function Portfolio() {
             meta: "BFerraz · 2025",
             home: true,
             tags: ["Social strategy", "Creative", "Brand campaign"],
-            pitch: "A B2C2B repositioning with Angélica and Luciano Huck that pulled 67M views.",
+            pitch: "A B2C2B repositioning fronted by Angélica and Luciano Huck. 67M views, and a silver at AMPRO.",
             badge: "AMPRO Silver",
-            p1: "In Brazil, thousands of people still try to rent or sell property on their own — and a lingering distrust of real-estate agencies turns that into bureaucracy, insecurity and headaches. Loft's answer: you can't leave it to luck, you go with who understands.",
-            p2: "We opened a B2C2B campaign with a Media for Equity move featuring Loft partners Angélica and Luciano Huck — generating the buzz the brand needed. An integrated campaign of films, merchandising and content built a more trusted, more recognized brand in the real-estate market. I led the social strategy and brought creative insights to the concept.",
+            p1: "Thousands of Brazilians still try to rent or sell property on their own, because years of distrust made agencies feel like more bureaucracy rather than less. Loft's answer was blunt: you don't leave your property to luck, you go with people who know what they are doing.",
+            p2: "We opened with a Media for Equity move fronted by Loft partners Angélica and Luciano Huck, which bought the brand attention that media alone could not. Films, merchandising and content carried it from there. I led the social strategy and put the creative insights into the concept.",
             metrics: [
               { v: "67M", l: "film views" },
               { v: "17.2M", l: "merchandising impressions" },
@@ -362,15 +362,15 @@ export default function Portfolio() {
       workpage: {
         kicker: "Work",
         title: "Work",
-        sub: "Selected projects across brand, sports, music and live events.",
-        homeHint: "Three highlights below — see every project on the Work page.",
-        homeCta: "See all work",
+        sub: "Campaigns, content and influencer work across brand, sport, music, healthcare and live events. Every case here has the numbers attached.",
+        homeHint: "The highlights are below. Every project lives on the Work page.",
+        homeCta: "See all ten projects",
         featuredLabel: "Featured",
         moreLabel: "More projects",
-        moreHint: "Case write-ups in progress",
-        wip: "Full case — in progress",
+        moreHint: "Short versions. Full cases in progress",
+        wip: "Full case coming",
         emptyTitle: "New cases coming soon.",
-        emptySub: "This is where ongoing and upcoming projects will land — cases I'm building right now, with real metrics, real craft and real stories. Pop back in.",
+        emptySub: "Ongoing and upcoming projects land here, with the numbers attached, once they are ready to be judged. Check back.",
         emptyMeta: "Next drop in production",
         backHome: "Back to home",
         more: [
@@ -378,25 +378,25 @@ export default function Portfolio() {
             title: "Longines Horse Show",
             meta: "Prime You · Live Event",
             tags: ["Live event", "Real-time", "Lead gen"],
-            line: "Real-time content operation for a high-visibility live event — exclusive coverage that turned brand presence into qualified leads with potential clients.",
+            line: "A real-time content operation inside a high-visibility live event. Exclusive coverage that turned brand presence into qualified leads with buyers in the room.",
           },
           {
             title: "Nilpel",
             meta: "Consumer brand · Freelance · 2024 – now",
             tags: ["Content lead", "Social", "Growth"],
-            line: "Content lead, freelance. Built the brand's social presence from zero with a lean team, owning strategy end-to-end.",
+            line: "Content lead, freelance. Built the brand's social presence from zero with a lean team, owning the strategy end to end.",
           },
           {
             title: "Baixio Turismo",
             meta: "Grupo Prima · BFerraz · 2025",
             tags: ["Brand building", "Influencers", "Tourism"],
-            line: "Built the digital positioning of a new national travel destination — managing 5+ profiles and influencer activations.",
+            line: "Built the digital positioning of a brand-new national travel destination, running 5+ profiles and the influencer activations behind it.",
           },
           {
             title: "Greenpark — 360° Campaigns",
             meta: "Greenpark · 2023 – 2024",
             tags: ["Digital strategy", "Influencers", "Reporting"],
-            line: "Strategic planning of 360° digital campaigns for Kimberly-Clark (Huggies), Unilever Food Solutions and others — influencer activations, multi-channel management and actionable reporting.",
+            line: "Strategic planning of 360° digital campaigns for Kimberly-Clark (Huggies), Unilever Food Solutions and others. Influencer activations, multi-channel management, and reporting a client could act on.",
           },
           {
             title: "Colletivo — Creative Content",
@@ -418,27 +418,26 @@ export default function Portfolio() {
       },
       profile: {
         kicker: "Profile",
-        title: "A behavior-first creative who reads culture for a living.",
-        body: "I move between agencies, global brands and the music industry — combining creative vision, broad cultural repertoire and strategic rigor to build narratives that connect brands and people. My background in user behavior and product gives me a rare angle on audiences: I treat strategy as research, and content as its proof.",
-        cta: "More about me",
+        title: "Strategy that starts with research, not assumptions.",
+        body: "Today I'm an influence and content strategist at Talent, on Neutrogena's Sun and Skin brands: creator curation, creative strategy, and a campaign for each product in the range, against national targets. Before advertising I spent four years in product and fintech teams, where a hypothesis about behavior had to be proven. That is the basis of how I work now.",
+        cta: "See how I work",
       },
       about: {
         kicker: "About",
         title: "",
-        p1: "I read cultural signals — what people watch, share, pretend not to like, secretly do — and turn them into creative strategy that feels less like advertising and more like something audiences were already waiting for.",
-        p2: "My path is unusual. I spent the first years of my career studying user behavior inside fintech and product teams. Same craft, different scale: observing how people move, validating hypotheses, leading teams toward something that actually works. I carried that rigor into creative strategy, and it's still the part of my work I'm most proud of.",
-        p3: "Today at Talent I lead influencer strategy for Neutrogena, after running content for Claro Brasil — with stops along the way at Loft, Sanofi, Unilever, Huggies, Samsung, Suvinil and international music artists across three continents.",
-        capsLabel: "What I bring",
+        p1: "I'm an influence and content strategist. Seven years across product and advertising — Nubank, K21, Greenpark, BFerraz and Talent — with campaigns for Claro, Sanofi, Loft, Unilever, Huggies and Neutrogena.",
+        p2: "Three creative awards: Gold at the Muse Awards and at Prémios Lusófonos for Sanofi, Silver at AMPRO Globes for Loft. In numbers: 67M views on campaign films, 39M impacts across a World Cup, and engagement 24 times the healthcare benchmark.",
+        p3: "Today at Talent I run influence and content strategy for Neutrogena's Sun and Skin brands: curation, creative strategy, and a campaign for each product in the range, working alongside major names in beauty and lifestyle. I came into advertising from product and fintech, where a hypothesis about behavior had to be proven before it shipped.",
+        capsLabel: "What I bring to your team",
         caps: [
-          "Analytical, focused, data-driven — a 360° eye that goes beyond social.",
-          "Always tuned to trends and opportunity, with a sharp sense for aesthetics and viral potential.",
-          "Influencer work, digital and offline campaigns, live events and social media management.",
-          "Self-management in my veins — personal and team organization built for excellence.",
+          "Influencer work end to end: curation, strategy, and the plan that makes a creator deliver more than a post.",
+          "Campaigns that don't stop at social: digital, offline, live events, and the integration between them.",
+          "Teams that ship. I've led creative, community and production, and got promoted mid-project doing it.",
+          "Numbers a client can take upstairs. Every case on this site has them, and I built the reporting behind them.",
         ],
         pathLabel: "The path",
-        pathIntro: "Not a straight line. A method.",
         path: [
-          { range: "2025 — now", label: "Talent", body: "Influencer strategy for Neutrogena. Before that, Content Supervisor for Claro Brasil — sports, entertainment and brand: Rio Open, CCXP and streaming launches." },
+          { range: "2025 — now", label: "Talent", current: true, body: "Influence and content strategist on Neutrogena's Sun and Skin brands — curation, creative strategy and a campaign per product, against national targets. Before that, Content Supervisor for Claro Brasil: Rio Open, CCXP and streaming launches." },
           { range: "2025", label: "BFerraz", body: "Content Manager, leading the creative and community team for Loft and Baixio. Promoted from Supervisor to Manager." },
           { range: "2024 — 2025", label: "Independent — Music Industry", body: "Creative strategy and direction for international music artists across Asia, North America and Europe. End-to-end creative direction." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. 360° campaigns for Sanofi, Huggies and Unilever. First international recognition." },
@@ -448,9 +447,9 @@ export default function Portfolio() {
         ],
         nowLabel: "Now",
         now: [
-          "Leading influencer strategy for Neutrogena at Talent.",
-          "Heading content strategy at Nilpel as a freelance project.",
-          "Always digging into culture, subcultures and what's about to move.",
+          "Influence and content strategy for Neutrogena's Sun and Skin brands, at Talent.",
+          "Running content strategy at Nilpel, freelance.",
+          "Mapping new names and formats before they saturate.",
         ],
         nowUpdated: "Updated August 2026",
         portraitLabel: "Nicolas Bonati",
@@ -459,55 +458,55 @@ export default function Portfolio() {
       contact: {
         kicker: "Contact",
         title: "Let's talk.",
-        sub: "For projects, collaborations, or a coffee about culture.",
+        sub: "For projects, partnerships, or a conversation.",
         directLabel: "Direct",
         elsewhereLabel: "Elsewhere",
         availLabel: "Availability",
-        avail: "Open to select freelance projects and creative partnerships — strategy, content direction and cultural research. Based in São Paulo, working with brands and artists worldwide.",
+        avail: "Available for projects, creative partnerships and full-time roles: influence strategy, content direction and campaigns. Based in São Paulo, working with brands and artists anywhere.",
         whatsapp: "WhatsApp",
         email: "Email",
         responseLabel: "Usually replies within 30 minutes",
       },
-      footer: { built: "São Paulo, Brazil", rights: "© 2026 Nicolas Bonati", top: "Back to top", ai: "Designed & built from scratch with AI — concept, copy and code." },
+      footer: { built: "São Paulo, Brazil", rights: "© 2026 Nicolas Bonati", top: "Back to top", ai: "Concept, copy and code by me" },
     },
 
     pt: {
       nav: { home: "Início", work: "Trabalhos", about: "Sobre", contact: "Contato" },
       hero: {
-        eyebrow: "Creative Strategist & Cultural Researcher",
+        eyebrow: "Estrategista de Influência e Conteúdo",
         name1: "Nicolas",
         name2: "Bonati",
-        tagline: "Estratégia com leitura de cultura. Conteúdo com intenção.",
-        metaA: "Talent — Neutrogena",
+        tagline: "Estratégia, conteúdo e curadoria de influência. Nessa ordem.",
+        metaA: "Talent — Neutrogena Sun & Skin",
         metaB: "São Paulo, Brasil",
-        metaC: "Aberto a novos projetos",
+        metaC: "Aberto a projetos e posições fixas",
         cue: "Trabalhos selecionados",
       },
       approach: {
         kicker: "Como eu trabalho",
         title: "",
         items: [
-          { n: "i", title: "Estratégia Criativa", body: "Do insight ao conceito — com o rigor de quem já viveu de validar hipótese." },
-          { n: "ii", title: "Direção de Conteúdo", body: "Conceito, criação, campanha, produção — lidero times de ponta a ponta. Da ideia ao post no ar: real time, lançamentos e universos de marca com ponto de vista criativo." },
-          { n: "iii", title: "Pesquisa Cultural", body: "Comportamento de audiência, subculturas, microtendências. O trabalho que vem antes do briefing." },
+          { n: "i", title: "Estratégia de Influência", body: "Curadoria e a estratégia que amarra criador e produto. Sei diferenciar afinidade real com a marca de puro volume, e sustento a escolha na frente do cliente." },
+          { n: "ii", title: "Estratégia Criativa", body: "Do insight ao conceito, e do conceito à campanha que roda em todo canal. Passei anos validando hipótese de comportamento, então a ideia chega testada antes de virar verba." },
+          { n: "iii", title: "Direção de Conteúdo", body: "Conceito, criação, produção, entrega. Lidero o time que leva da linha no deck até o post no ar: real time, lançamento, universo de marca inteiro." },
         ],
       },
       work: {
         kicker: "Trabalhos Selecionados",
-        title: "Três projetos, uma obsessão: fazer marca virar cultura.",
-        hint: "Toque num projeto pra abrir o case",
+        title: "Cinco cases. Sempre o mesmo método.",
+        hint: "Abra um case. Os números estão dentro",
         roleLabel: "Função",
         recogLabel: "Reconhecimento",
         partnersLabel: "Parcerias",
         videoLabel: "vídeo — em breve",
         openLabel: "Abrir case",
         closeLabel: "Fechar case",
-        resultsLabel: "Resultados, em resumo",
+        resultsLabel: "Os números, de cara",
         results: [
           { v: "67MM", l: "de views em filmes de campanha" },
-          { v: "39MM", l: "de impactos numa só Copa do Mundo" },
-          { v: "24×", l: "o benchmark da categoria de saúde" },
-          { v: "3", l: "prêmios internacionais de criação" },
+          { v: "39MM", l: "de impactos numa só Copa" },
+          { v: "24×", l: "acima do benchmark de saúde" },
+          { v: "3", l: "prêmios de criação" },
         ],
         items: [
           {
@@ -515,10 +514,10 @@ export default function Portfolio() {
             meta: "Sanofi · Greenpark · 2024",
             home: true,
             tags: ["Tempo real", "IA", "Saúde"],
-            pitch: "Peguei uma microtendência e virei seis campanhas de marca em dias — 24× o benchmark da categoria.",
+            pitch: "Peguei uma microtendência, virei seis campanhas de marca em dias e passei o benchmark da categoria 24 vezes.",
             badge: "2 prêmios",
-            p1: `A social da Sanofi Brasil roda em cima de social listening. Quando "hidden words AI" começou a bombar no Google Trends, a gente agiu rápido: montou uma campanha visual afinada com a mensagem e a identidade de seis marcas ao mesmo tempo.`,
-            p2: "Foram mais de 1.000 imagens geradas por IA em seis posts. A campanha estourou o benchmark da categoria de saúde e virou uma ativação premiada — feita em tempo real.",
+            p1: `A social da Sanofi Brasil roda em cima de listening. Quando "hidden words AI" começou a subir no Google Trends, a janela era curta: montar uma ideia visual capaz de carregar a mensagem e a identidade de seis marcas ao mesmo tempo, antes da trend esfriar.`,
+            p2: "Mais de 1.000 imagens geradas por IA em seis posts. Farma é a categoria em que nada engaja: o benchmark é 0,24%. A gente entregou 5,8%, e o mercado devolveu dois prêmios.",
             metrics: [
               { v: "5,8%", l: "ERR médio por post — contra 0,24% do benchmark" },
               { v: "1.000+", l: "imagens criadas com IA" },
@@ -538,9 +537,9 @@ export default function Portfolio() {
             home: true,
             meta: "Claro Brasil · Talent · 2026",
             tags: ["Influenciadores", "Esportes", "Lançamento de produto"],
-            pitch: "220 criadores hackearam a Copa do Mundo pela Claro — 500+ conteúdos, 39MM de impactos.",
-            p1: "Copa é de quem aparece mais alto. A Claro chegou com 220 nomes de influenciador de uma vez e usou o torneio pra entregar uma mensagem de produto: os novos benefícios do 5G e do Claro Multi.",
-            p2: "Mais de 500 conteúdos montados em cima do calendário dos jogos — transformando anúncio de produto em algo que a audiência acompanhou como parte do próprio torneio.",
+            pitch: "220 criadores hackearam a Copa pela Claro: 500+ conteúdos e 39MM de impactos.",
+            p1: "Copa é de quem aparece mais alto. A Claro apareceu com 220 nomes de influenciador de uma vez e usou o torneio pra carregar uma história de produto: os novos benefícios do 5G e do Claro Multi.",
+            p2: "Mais de 500 conteúdos encaixados no calendário dos jogos. Anúncio de produto é fácil de passar reto. Uma coisa que aparece todo dia de jogo, na mão de quem você já segue, não é.",
             metrics: [
               { v: "39MM", l: "de impactos" },
               { v: "37MM", l: "de impressões" },
@@ -556,9 +555,9 @@ export default function Portfolio() {
             meta: "Claro Brasil · Talent · 2025",
             home: true,
             tags: ["Tempo real", "Esportes", "Branding"],
-            pitch: "Dez dias de tênis virando máquina de conteúdo para a Claro, com alcance de milhões.",
-            p1: "A presença da Claro no maior torneio de tênis da América Latina, coberta em tempo real — com estratégia e direção criativa em três frentes: oportunidade, real time e grandes ativações.",
-            p2: "Parcerias com o @newballsplease e conteúdos com o João Fonseca transformaram dez dias de torneio numa máquina de conteúdo que rodou sem parar e alcançou milhões.",
+            pitch: "Dez dias de tênis, 120+ conteúdos no ar, milhões de alcance. A Claro não saiu da conversa.",
+            p1: "O maior torneio de tênis da América Latina, coberto ao vivo por dez dias seguidos. Cuidei da estratégia e da direção criativa em três frentes ao mesmo tempo: oportunidade, real time e as grandes ativações.",
+            p2: "Parceria com o @newballsplease e conteúdo em cima do João Fonseca deram à marca algo pra dizer em todo dia de chave, não só no fim de semana da final.",
             metrics: [
               { v: "120+", l: "conteúdos no ar" },
               { v: "Milhões", l: "de alcance" },
@@ -573,9 +572,9 @@ export default function Portfolio() {
             home: true,
             meta: "Independente · Indústria Musical · 2024 – 25",
             tags: ["Música", "Social", "Crescimento"],
-            pitch: "Construí o canal de uma artista internacional do zero a 8K fãs em seis meses, com shooting em três continentes.",
-            p1: "O canal de uma artista internacional, construído do zero. Desenhei a direção criativa e a estratégia de canais — e, na sequência, uma camada de mídia paga que levava os fãs direto pra página dela.",
-            p2: "Produção e direção de shootings em três continentes — Ásia, América do Norte e Europa — em cima de um sistema de conteúdo que a audiência realmente queria acompanhar.",
+            pitch: "Canal de uma artista internacional do zero a 8K fãs e 12% de engajamento em seis meses. Com shooting em três continentes.",
+            p1: "Sem audiência, sem acervo de conteúdo, sem time. Construí a direção criativa e a estratégia de canais do nada, e depois somei uma camada de mídia paga que jogava o ouvinte certo direto na página dela.",
+            p2: "Produzi e dirigi shootings na Ásia, América do Norte e Europa, tudo alimentando um sistema de conteúdo feito pra ser acompanhado, não só postado. O canal sustentou 12% de engajamento médio o caminho inteiro.",
             metrics: [
               { v: "+8K", l: "seguidores orgânicos em 6 meses" },
               { v: "12%", l: "de engajamento médio" },
@@ -590,10 +589,10 @@ export default function Portfolio() {
             meta: "BFerraz · 2025",
             home: true,
             tags: ["Estratégia de social", "Criação", "Campanha de marca"],
-            pitch: "Um reposicionamento B2C2B com Angélica e Luciano Huck que rendeu 67MM de views.",
+            pitch: "Um reposicionamento B2C2B estrelado por Angélica e Luciano Huck. 67MM de views e uma prata no AMPRO.",
             badge: "AMPRO Prata",
-            p1: "No Brasil, milhares de pessoas ainda tentam alugar ou vender imóvel por conta própria — e a desconfiança com imobiliárias transforma isso em burocracia, insegurança e dor de cabeça. A resposta da Loft: não dá pra contar com a sorte, vai com quem entende.",
-            p2: "Abrimos uma campanha B2C2B com uma ação de Media for Equity estrelada pelos sócios da marca, Angélica e Luciano Huck — gerando o buzz que a Loft precisava. Uma campanha integrada de filmes, merchans e conteúdo construiu uma marca mais confiável e reconhecida no mercado imobiliário. Cuidei da estratégia de social e trouxe insights criativos pro conceito.",
+            p1: "Milhares de brasileiros ainda tentam alugar ou vender imóvel por conta própria, porque anos de desconfiança fizeram imobiliária parecer mais burocracia, e não menos. A resposta da Loft foi direta: não dá pra contar com a sorte, vai com quem entende.",
+            p2: "Abrimos com uma ação de Media for Equity estrelada pelos sócios da marca, Angélica e Luciano Huck, que comprou pra Loft uma atenção que mídia sozinha não compraria. Filme, merchan e conteúdo levaram dali pra frente. Cuidei da estratégia de social e coloquei o insight criativo no conceito.",
             metrics: [
               { v: "67MM", l: "de views nos filmes" },
               { v: "17,2MM", l: "de impactos em merchans" },
@@ -610,15 +609,15 @@ export default function Portfolio() {
       workpage: {
         kicker: "Trabalhos",
         title: "Trabalhos",
-        sub: "Uma seleção de projetos entre branding, esportes, música e eventos ao vivo.",
-        homeHint: "Três destaques aqui embaixo — o resto tá todo na aba Trabalhos.",
-        homeCta: "Ver todos os trabalhos",
+        sub: "Campanha, conteúdo e influência em marca, esporte, música, saúde e evento ao vivo. Todo case aqui vem com número.",
+        homeHint: "Os destaques estão aqui embaixo. Todo projeto vive na aba Trabalhos.",
+        homeCta: "Ver os dez projetos",
         featuredLabel: "Destaques",
         moreLabel: "Outros projetos",
-        moreHint: "Cases ainda em construção",
-        wip: "Case completo — em breve",
+        moreHint: "Versão curta. Case completo em construção",
+        wip: "Case completo em breve",
         emptyTitle: "Novos cases chegando em breve.",
-        emptySub: "É aqui que os projetos em andamento e os próximos vão pousar — cases que estou construindo agora, com métricas reais, craft e história. Volta pra acompanhar.",
+        emptySub: "Os projetos em andamento e os próximos pousam aqui, com número, quando estiverem prontos pra ser julgados. Volta pra acompanhar.",
         emptyMeta: "Próximo drop em produção",
         backHome: "Voltar para o início",
         more: [
@@ -626,7 +625,7 @@ export default function Portfolio() {
             title: "Longines Horse Show",
             meta: "Prime You · Evento ao Vivo",
             tags: ["Evento ao vivo", "Tempo real", "Geração de leads"],
-            line: "Operação de conteúdo em tempo real num evento ao vivo de alta visibilidade — cobertura exclusiva que transformou presença de marca em lead qualificado com potencial cliente.",
+            line: "Operação de conteúdo em tempo real dentro de um evento ao vivo de alta visibilidade. Cobertura exclusiva que virou lead qualificado com o comprador ali na sala.",
           },
           {
             title: "Nilpel",
@@ -638,13 +637,13 @@ export default function Portfolio() {
             title: "Baixio Turismo",
             meta: "Grupo Prima · BFerraz · 2025",
             tags: ["Construção de marca", "Influenciadores", "Turismo"],
-            line: "Construí o posicionamento digital de um novo destino nacional — com gestão de mais de 5 perfis e ativações com influenciadores.",
+            line: "Construí o posicionamento digital de um destino nacional recém-nascido, com mais de 5 perfis na mão e as ativações de influenciador por trás.",
           },
           {
             title: "Greenpark — Campanhas 360°",
             meta: "Greenpark · 2023 – 2024",
             tags: ["Estratégia digital", "Influenciadores", "Relatórios"],
-            line: "Planejamento de campanhas digitais 360° para Kimberly-Clark (Huggies), Unilever Food Solutions e outras — ativações com influenciadores, gestão multicanal e relatórios que viravam ação.",
+            line: "Planejamento de campanhas digitais 360° para Kimberly-Clark (Huggies), Unilever Food Solutions e outras. Ativação de influenciador, gestão multicanal e relatório que o cliente conseguia usar.",
           },
           {
             title: "Colletivo — Conteúdo Criativo",
@@ -666,27 +665,26 @@ export default function Portfolio() {
       },
       profile: {
         kicker: "Perfil",
-        title: "Um criativo movido a comportamento — que lê cultura pra viver.",
-        body: "Eu transito entre agências, marcas globais e a indústria musical, juntando visão criativa, repertório cultural e rigor de estratégia pra construir narrativas que aproximam marcas e pessoas. Minha base em comportamento de usuário e produto me dá um ângulo raro sobre audiência: pra mim, estratégia é pesquisa — e conteúdo é a prova de que ela funcionou.",
-        cta: "Mais sobre mim",
+        title: "Estratégia que começa em pesquisa, não em achismo.",
+        body: "Hoje sou estrategista de influência e conteúdo na Talent, nas marcas de Sun e Skin da Neutrogena: curadoria, defesa dos nomes, estratégia criativa e uma campanha para cada produto da linha, com meta nacional. Antes da publicidade, passei quatro anos em time de produto e de fintech, onde hipótese de comportamento tinha que ser provada. É a base de como eu trabalho hoje.",
+        cta: "Ver como eu trabalho",
       },
       about: {
         kicker: "Sobre",
         title: "",
-        p1: "Eu leio sinais culturais — o que as pessoas assistem, compartilham, fingem não curtir, fazem escondido — e transformo isso em estratégia criativa. O resultado parece menos com propaganda e mais com algo que a audiência já estava esperando.",
-        p2: "Minha trajetória foge do óbvio. Passei os primeiros anos da carreira estudando comportamento de usuário em times de produto e fintech. É o mesmo ofício, só que em outra escala: olhar como as pessoas se movem, validar hipótese, conduzir time até algo que funciona de verdade. Levei esse rigor pra criação — e até hoje é a parte do meu trabalho de que mais me orgulho.",
-        p3: "Hoje, na Talent, cuido da estratégia de influenciadores da Neutrogena — depois de tocar o conteúdo da Claro Brasil e de passar por Loft, Sanofi, Unilever, Huggies, Samsung, Suvinil e artistas internacionais em três continentes.",
-        capsLabel: "O que eu trago",
+        p1: "Sou estrategista de influência e conteúdo. Sete anos entre produto e publicidade — Nubank, K21, Greenpark, BFerraz e Talent — assinando campanhas para Claro, Sanofi, Loft, Unilever, Huggies e Neutrogena.",
+        p2: "Três prêmios de criação: ouro no Muse Awards e nos Prémios Lusófonos com a Sanofi, prata no AMPRO Globes com a Loft. Nos números: 67 milhões de views em filme de campanha, 39 milhões de impactos numa Copa do Mundo e engajamento 24 vezes acima do benchmark de saúde.",
+        p3: "Hoje, na Talent, cuido da estratégia de influência e conteúdo das marcas de Sun e Skin da Neutrogena: curadoria, defesa dos nomes, estratégia criativa e campanha para cada produto da linha, ao lado de nomes grandes de beleza e lifestyle. Cheguei à publicidade vindo de produto e fintech, onde hipótese de comportamento tinha que ser provada antes de ir pro ar.",
+        capsLabel: "O que eu trago para o seu time",
         caps: [
-          "Analítico, focado e movido a dados — com um olhar 360° que não para no social.",
-          "Sempre de olho em trend e oportunidade, com faro pra estética e pra potencial de viralizar.",
-          "Rodo influenciador, campanha digital e offline, evento e gestão de social.",
-          "Autogestão na veia — organização minha e do time montada pra entregar com excelência.",
+          "Influência de ponta a ponta: curadoria, estratégia e o plano que faz o criador entregar mais do que post.",
+          "Campanha que não para no social: digital, offline, evento ao vivo e a integração entre eles.",
+          "Time que entrega. Já liderei criação, community e produção, e fui promovido no meio do projeto fazendo isso.",
+          "Números que sustentam apresentação de diretoria. Todo case daqui tem, e o relatório por trás fui eu que montei.",
         ],
         pathLabel: "A trajetória",
-        pathIntro: "Não é uma linha reta. É um método.",
         path: [
-          { range: "2025 — agora", label: "Talent", body: "Estratégia de influenciadores da Neutrogena. Antes, Supervisor de Conteúdo da Claro Brasil — esportes, entretenimento e branding: Rio Open, CCXP e lançamentos em streaming." },
+          { range: "2025 — agora", label: "Talent", current: true, body: "Estrategista de influência e conteúdo das marcas de Sun e Skin da Neutrogena — curadoria, defesa dos nomes, estratégia criativa e campanha por produto, com meta nacional. Antes, Supervisor de Conteúdo da Claro Brasil: Rio Open, CCXP e lançamento em streaming." },
           { range: "2025", label: "BFerraz", body: "Gerente de Conteúdo, à frente do time de criação e community management de Loft e Baixio. Promovido de Supervisor a Gerente." },
           { range: "2024 — 2025", label: "Independente — Indústria Musical", body: "Estratégia e direção criativa para artistas internacionais na Ásia, América do Norte e Europa. Direção criativa de ponta a ponta." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. Campanhas 360° para Sanofi, Huggies e Unilever. Primeiro reconhecimento internacional." },
@@ -696,9 +694,9 @@ export default function Portfolio() {
         ],
         nowLabel: "Agora",
         now: [
-          "Cuidando da estratégia de influenciadores da Neutrogena, na Talent.",
-          "Tocando a estratégia de conteúdo da Nilpel como projeto freelance.",
-          "Sempre cavando cultura, subcultura e o que está prestes a virar tendência.",
+          "Estratégia de influência e conteúdo das marcas de Sun e Skin da Neutrogena, na Talent.",
+          "Tocando a estratégia de conteúdo da Nilpel, como freelancer.",
+          "Mapeando novos nomes e formatos antes de saturarem.",
         ],
         nowUpdated: "Atualizado em agosto de 2026",
         portraitLabel: "Nicolas Bonati",
@@ -707,16 +705,16 @@ export default function Portfolio() {
       contact: {
         kicker: "Contato",
         title: "Vamos conversar.",
-        sub: "Pra projeto, parceria ou um café sobre cultura.",
+        sub: "Para projetos, parcerias ou uma conversa.",
         directLabel: "Direto",
         elsewhereLabel: "Em outros cantos",
         availLabel: "Disponibilidade",
-        avail: "Aberto a projetos freelance e parcerias criativas — estratégia, direção de conteúdo e pesquisa cultural. Fico em São Paulo, mas trabalho com marca e artista do mundo todo.",
+        avail: "Disponível para projetos, parcerias criativas e posições fixas: estratégia de influência, direção de conteúdo e campanha. Fico em São Paulo e trabalho com marcas e artistas de qualquer lugar.",
         whatsapp: "WhatsApp",
         email: "Email",
         responseLabel: "Costumo responder em até 30 minutos",
       },
-      footer: { built: "São Paulo, Brasil", rights: "© 2026 Nicolas Bonati", top: "Voltar ao topo", ai: "Concebido e construído do zero com IA — conceito, texto e código." },
+      footer: { built: "São Paulo, Brasil", rights: "© 2026 Nicolas Bonati", top: "Voltar ao topo", ai: "Conceito, texto e código por mim" },
     },
   };
 
@@ -725,7 +723,7 @@ export default function Portfolio() {
   // so adding or reordering a case can't silently change the highlights
   const homeHighlights = t.work.items.filter((p) => p.home);
   const clients = ["Claro", "Neutrogena", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
-  const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora", "Vic Hollo", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
+  const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "Emmma Says", "Kady Zadora", "Vic Hollo", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
 
   /* ---------------------------- SCROLL ---------------------------- */
   const onScroll = useCallback(() => {
@@ -1132,9 +1130,12 @@ export default function Portfolio() {
            otherwise every section stacks its own stray horizontal line */
         .nb-sub { font-family: var(--mono); font-size: 12px; color: var(--accent);
           letter-spacing: .03em; margin-bottom: 22px; }
-        .nb-path-intro { font-family: var(--display); font-weight: 400;
-          font-size: clamp(22px, 2.6vw, 34px); letter-spacing: -.02em;
-          color: var(--ink-soft); margin-bottom: 36px; max-width: 20ch; }
+        /* the current role is marked in the accent, with the hero's live dot */
+        .nb-path-item.is-now .nb-path-range { color: var(--accent); }
+        .nb-path-item.is-now .nb-path-label { color: var(--accent);
+          display: inline-flex; align-items: center; gap: 10px; }
+        .nb-path-live { width: 8px; height: 8px; border-radius: 50%; flex: none;
+          background: var(--accent); animation: pulse 2.6s infinite; }
         .nb-path-item { display: grid; grid-template-columns: 150px 200px 1fr; gap: 32px;
           padding: 26px 0; border-top: 1px solid var(--line); align-items: baseline; }
         .nb-path-item:last-child { border-bottom: 1px solid var(--line); }
@@ -1603,7 +1604,7 @@ export default function Portfolio() {
             {/* cta band -> contact */}
             <div className="nb-band rv">
               <div className="nb-band-title">
-                {lang === "en" ? <>Let's build something<span className="period">.</span></> : <>Vamos criar algo<span className="period">.</span></>}
+                {lang === "en" ? <>Bring me the hard brief<span className="period">.</span></> : <>Traz o briefing difícil<span className="period">.</span></>}
               </div>
               <button className="nb-band-cta" onClick={() => nav("contact")}>
                 {t.about.ctaLabel}
@@ -1708,12 +1709,14 @@ export default function Portfolio() {
             {/* path */}
             <div style={{ marginTop: "clamp(40px,5vh,72px)" }}>
               <div className="nb-sub rv">{t.about.pathLabel}</div>
-              <p className="nb-path-intro rv d1">{t.about.pathIntro}</p>
               <div className="rv d1">
                 {t.about.path.map((p, i) => (
-                  <div className="nb-path-item" key={i}>
+                  <div className={"nb-path-item" + (p.current ? " is-now" : "")} key={i}>
                     <span className="nb-path-range">{p.range}</span>
-                    <span className="nb-path-label">{p.label}</span>
+                    <span className="nb-path-label">
+                      {p.current && <span className="nb-path-live" />}
+                      {p.label}
+                    </span>
                     <span className="nb-path-body">{p.body}</span>
                   </div>
                 ))}
@@ -1729,7 +1732,7 @@ export default function Portfolio() {
             {/* cta band -> contact */}
             <div className="nb-band rv">
               <div className="nb-band-title">
-                {lang === "en" ? <>Let's build something<span className="period">.</span></> : <>Vamos criar algo<span className="period">.</span></>}
+                {lang === "en" ? <>Bring me the hard brief<span className="period">.</span></> : <>Traz o briefing difícil<span className="period">.</span></>}
               </div>
               <button className="nb-band-cta" onClick={() => nav("contact")}>
                 {t.about.ctaLabel}
