@@ -306,6 +306,7 @@ export default function Portfolio() {
           {
             title: "Rio Open",
             meta: "Claro Brasil · Talent · 2025",
+            home: true,
             tags: ["Real-time", "Sports", "Brand"],
             pitch: "Ten days of tennis turned into a non-stop content engine for Claro, reaching millions.",
             p1: "Claro's presence at Latin America's biggest tennis event, covered in real time — strategy and creative direction across opportunity, real-time and big-activation fronts.",
@@ -321,6 +322,7 @@ export default function Portfolio() {
           },
           {
             title: "@emmmasays",
+            home: true,
             meta: "Independent · Music Industry · 2024 – 25",
             tags: ["Music", "Social", "Growth"],
             pitch: "Built an international artist's channel from zero to 8K fans in six months, shooting across three continents.",
@@ -552,6 +554,7 @@ export default function Portfolio() {
           {
             title: "Rio Open",
             meta: "Claro Brasil · Talent · 2025",
+            home: true,
             tags: ["Tempo real", "Esportes", "Branding"],
             pitch: "Dez dias de tênis virando máquina de conteúdo para a Claro, com alcance de milhões.",
             p1: "A presença da Claro no maior torneio de tênis da América Latina, coberta em tempo real — com estratégia e direção criativa em três frentes: oportunidade, real time e grandes ativações.",
@@ -567,6 +570,7 @@ export default function Portfolio() {
           },
           {
             title: "@emmmasays",
+            home: true,
             meta: "Independente · Indústria Musical · 2024 – 25",
             tags: ["Música", "Social", "Crescimento"],
             pitch: "Construí o canal de uma artista internacional do zero a 8K fãs em seis meses, com shooting em três continentes.",
@@ -888,6 +892,19 @@ export default function Portfolio() {
           font-size: clamp(68px, 14.5vw, 232px); line-height: .9; letter-spacing: -.04em; }
         .nb-hero-name .l2 { display: block; }
         .nb-hero-name .period { color: var(--accent); }
+        .nb-hero-head { display: flex; align-items: flex-end;
+          gap: clamp(20px, 3vw, 46px); }
+        .nb-hero-portrait { width: clamp(104px, 12vw, 186px); aspect-ratio: 1;
+          border-radius: 50%; overflow: hidden; flex-shrink: 0;
+          background: var(--bg-2); border: 1px solid var(--line);
+          margin-bottom: clamp(8px, 1.4vw, 22px);
+          transition: transform .5s cubic-bezier(.16,1,.3,1); }
+        .nb-hero-portrait:hover { transform: translateY(-4px); }
+        /* the source photo is a mirror selfie: zoom past the phone and frame
+           the face, which sits up and to the left of centre */
+        .nb-hero-portrait img { width: 100%; height: 100%;
+          object-fit: cover; display: block;
+          transform: scale(1.75); transform-origin: 31% 27%; }
         .nb-hero-bottom { display: flex; justify-content: space-between; align-items: flex-end;
           gap: 40px; margin-top: 46px; flex-wrap: wrap; }
         .nb-hero-tag { font-family: var(--display); font-weight: 400;
@@ -1307,6 +1324,10 @@ export default function Portfolio() {
           .nb-burger { display: block; }
           .nb-hero { min-height: 92svh; padding-top: 110px; }
           .nb-hero-bottom { flex-direction: column; align-items: flex-start; gap: 30px; }
+          /* the giant name plus a circle will not fit side by side on a phone */
+          .nb-hero-head { flex-direction: column-reverse; align-items: flex-start;
+            gap: 22px; }
+          .nb-hero-portrait { width: 92px; margin-bottom: 0; }
           .nb-pillars { grid-template-columns: 1fr; }
           .nb-awards { grid-template-columns: 1fr; }
           .nb-caps { grid-template-columns: 1fr; }
@@ -1374,10 +1395,19 @@ export default function Portfolio() {
           <section className="nb-hero nb-wrap">
             <div>
               <div className="nb-hero-eyebrow rv"><span className="live" />{t.hero.eyebrow}</div>
-              <h1 className="nb-hero-name rv d1">
-                {t.hero.name1}
-                <span className="l2">{t.hero.name2}<span className="period">.</span></span>
-              </h1>
+              {/* portrait sits after the name in the DOM so it lands to the
+                  right on desktop and flips above the name on narrow screens */}
+              <div className="nb-hero-head">
+                <h1 className="nb-hero-name rv d1">
+                  {t.hero.name1}
+                  <span className="l2">{t.hero.name2}<span className="period">.</span></span>
+                </h1>
+                {PORTRAIT_URL && (
+                  <div className="nb-hero-portrait rv d2">
+                    <img src={PORTRAIT_URL} alt={t.about.portraitLabel} width={1254} height={1254} />
+                  </div>
+                )}
+              </div>
               <div className="nb-hero-bottom">
                 <p className="nb-hero-tag rv d2">{t.hero.tagline}</p>
                 <div className="nb-hero-meta rv d3">
