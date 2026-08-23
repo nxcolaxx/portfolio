@@ -41,7 +41,7 @@ export default function Portfolio() {
         name1: "Nicolas",
         name2: "Bonati",
         tagline: "Strategy with cultural depth. Content with intent.",
-        metaA: "Talent — Claro Brasil",
+        metaA: "Talent — Neutrogena",
         metaB: "São Paulo, Brazil",
         metaC: "Open to select projects",
         cue: "Selected work",
@@ -51,7 +51,7 @@ export default function Portfolio() {
         title: "",
         items: [
           { n: "i", title: "Creative Strategy", body: "From cultural insight to concept, with the rigor of someone who used to validate hypotheses for a living." },
-          { n: "ii", title: "Content Direction", body: "Leading teams end-to-end — concept, production, community, report. Real-time activations, launches, brand worlds." },
+          { n: "ii", title: "Content Direction", body: "Concept, creation, campaign, production — leading teams end-to-end. From the idea to the post going live: real-time activations, launches and brand worlds with a creative point of view." },
           { n: "iii", title: "Cultural Research", body: "Audience behavior, subcultures, micro-trends. The work that happens before the brief." },
         ],
       },
@@ -78,7 +78,12 @@ export default function Portfolio() {
             ],
             role: "Creative & content strategy",
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
-            image: "/hidden%20words%20sanofi%20case.png",
+            // gallery: replace nulls with image paths to populate the loose pieces.
+            // e.g. ["/hw-piece-1.jpg", "/hw-piece-2.jpg", ...]
+            gallery: [null, null, null, null, null, null],
+            galleryLabel: "The pieces",
+            boardImage: "/hidden%20words%20sanofi%20case.png",
+            boardLabel: "The board — full layout",
           },
           {
             title: "Rio Open",
@@ -152,6 +157,10 @@ export default function Portfolio() {
         moreLabel: "More projects",
         moreHint: "Case write-ups in progress",
         wip: "Full case — in progress",
+        emptyTitle: "New cases coming soon.",
+        emptySub: "This is where ongoing and upcoming projects will land — cases I'm building right now, with real metrics, real craft and real stories. Pop back in.",
+        emptyMeta: "Next drop in production",
+        backHome: "Back to home",
         more: [
           {
             title: "Nilpel",
@@ -200,7 +209,7 @@ export default function Portfolio() {
         title: "",
         p1: "I read cultural signals — what people watch, share, pretend not to like, secretly do — and turn them into creative strategy that feels less like advertising and more like something audiences were already waiting for.",
         p2: "My path is unusual. I spent the first years of my career studying user behavior inside fintech and product teams. Same craft, different scale: observing how people move, validating hypotheses, leading teams toward something that actually works. I carried that rigor into creative strategy, and it's still the part of my work I'm most proud of.",
-        p3: "Today I lead content strategy for Claro Brasil at Talent, with stops along the way at Loft, Sanofi, Unilever, Huggies, Samsung, Suvinil and international music artists across three continents.",
+        p3: "Today at Talent I lead influencer strategy for Neutrogena, after running content for Claro Brasil — with stops along the way at Loft, Sanofi, Unilever, Huggies, Samsung, Suvinil and international music artists across three continents.",
         capsLabel: "What I bring",
         caps: [
           "Analytical, focused, data-driven — a 360° eye that goes beyond social.",
@@ -211,7 +220,7 @@ export default function Portfolio() {
         pathLabel: "The path",
         pathIntro: "Not a straight line. A method.",
         path: [
-          { range: "2025 — now", label: "Talent", body: "Content Supervisor for Claro Brasil — sports, entertainment and brand. Rio Open, CCXP and streaming launches." },
+          { range: "2025 — now", label: "Talent", body: "Influencer strategy for Neutrogena. Before that, Content Supervisor for Claro Brasil — sports, entertainment and brand: Rio Open, CCXP and streaming launches." },
           { range: "2025", label: "BFerraz", body: "Content Manager, leading the creative and community team for Loft and Baixio. Promoted from Supervisor to Manager." },
           { range: "2024 — 2025", label: "Independent — Music Industry", body: "Creative strategy and direction for international music artists across Asia, North America and Europe. End-to-end creative direction." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. 360° campaigns for Sanofi, Huggies and Unilever. First international recognition." },
@@ -221,11 +230,11 @@ export default function Portfolio() {
         ],
         nowLabel: "Now",
         now: [
-          "Leading Claro's content across sports, entertainment & brand at Talent.",
+          "Leading influencer strategy for Neutrogena at Talent.",
           "Heading content strategy at Nilpel as a freelance project.",
           "Always digging into culture, subcultures and what's about to move.",
         ],
-        nowUpdated: "Updated May 2026",
+        nowUpdated: "Updated August 2026",
         portraitLabel: "Nicolas Bonati",
         ctaLabel: "Work with me",
       },
@@ -251,7 +260,7 @@ export default function Portfolio() {
         name1: "Nicolas",
         name2: "Bonati",
         tagline: "Estratégia com leitura de cultura. Conteúdo com intenção.",
-        metaA: "Talent — Claro Brasil",
+        metaA: "Talent — Neutrogena",
         metaB: "São Paulo, Brasil",
         metaC: "Aberto a novos projetos",
         cue: "Trabalhos selecionados",
@@ -261,7 +270,7 @@ export default function Portfolio() {
         title: "",
         items: [
           { n: "i", title: "Estratégia Criativa", body: "Do insight ao conceito — com o rigor de quem já viveu de validar hipótese." },
-          { n: "ii", title: "Direção de Conteúdo", body: "Lidero times de ponta a ponta: conceito, produção, comunidade e report. Real time, lançamentos e universos de marca." },
+          { n: "ii", title: "Direção de Conteúdo", body: "Conceito, criação, campanha, produção — lidero times de ponta a ponta. Da ideia ao post no ar: real time, lançamentos e universos de marca com ponto de vista criativo." },
           { n: "iii", title: "Pesquisa Cultural", body: "Comportamento de audiência, subculturas, microtendências. O trabalho que vem antes do briefing." },
         ],
       },
@@ -288,7 +297,12 @@ export default function Portfolio() {
             ],
             role: "Estratégia criativa e de conteúdo",
             recognition: "Muse Awards — Gold · Prémios Lusófonos — OURO",
-            image: "/hidden%20words%20sanofi%20case.png",
+            // gallery: troque os nulls por caminhos de imagens das peças soltas.
+            // ex.: ["/hw-piece-1.jpg", "/hw-piece-2.jpg", ...]
+            gallery: [null, null, null, null, null, null],
+            galleryLabel: "As peças",
+            boardImage: "/hidden%20words%20sanofi%20case.png",
+            boardLabel: "O board — layout completo",
           },
           {
             title: "Rio Open",
@@ -362,6 +376,10 @@ export default function Portfolio() {
         moreLabel: "Outros projetos",
         moreHint: "Cases ainda em construção",
         wip: "Case completo — em breve",
+        emptyTitle: "Novos cases chegando em breve.",
+        emptySub: "É aqui que os projetos em andamento e os próximos vão pousar — cases que estou construindo agora, com métricas reais, craft e história. Volta pra acompanhar.",
+        emptyMeta: "Próximo drop em produção",
+        backHome: "Voltar para o início",
         more: [
           {
             title: "Nilpel",
@@ -410,7 +428,7 @@ export default function Portfolio() {
         title: "",
         p1: "Eu leio sinais culturais — o que as pessoas assistem, compartilham, fingem não curtir, fazem escondido — e transformo isso em estratégia criativa. O resultado parece menos com propaganda e mais com algo que a audiência já estava esperando.",
         p2: "Minha trajetória foge do óbvio. Passei os primeiros anos da carreira estudando comportamento de usuário em times de produto e fintech. É o mesmo ofício, só que em outra escala: olhar como as pessoas se movem, validar hipótese, conduzir time até algo que funciona de verdade. Levei esse rigor pra criação — e até hoje é a parte do meu trabalho de que mais me orgulho.",
-        p3: "Hoje lidero a estratégia de conteúdo da Claro Brasil na Talent, depois de passar por Loft, Sanofi, Unilever, Huggies, Samsung, Suvinil e por artistas internacionais em três continentes.",
+        p3: "Hoje, na Talent, cuido da estratégia de influenciadores da Neutrogena — depois de tocar o conteúdo da Claro Brasil e de passar por Loft, Sanofi, Unilever, Huggies, Samsung, Suvinil e artistas internacionais em três continentes.",
         capsLabel: "O que eu trago",
         caps: [
           "Analítico, focado e movido a dados — com um olhar 360° que não para no social.",
@@ -421,7 +439,7 @@ export default function Portfolio() {
         pathLabel: "A trajetória",
         pathIntro: "Não é uma linha reta. É um método.",
         path: [
-          { range: "2025 — agora", label: "Talent", body: "Supervisor de Conteúdo para a Claro Brasil — esportes, entretenimento e branding. Rio Open, CCXP e lançamentos em streaming." },
+          { range: "2025 — agora", label: "Talent", body: "Estratégia de influenciadores da Neutrogena. Antes, Supervisor de Conteúdo da Claro Brasil — esportes, entretenimento e branding: Rio Open, CCXP e lançamentos em streaming." },
           { range: "2025", label: "BFerraz", body: "Gerente de Conteúdo, à frente do time de criação e community management de Loft e Baixio. Promovido de Supervisor a Gerente." },
           { range: "2024 — 2025", label: "Independente — Indústria Musical", body: "Estratégia e direção criativa para artistas internacionais na Ásia, América do Norte e Europa. Direção criativa de ponta a ponta." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. Campanhas 360° para Sanofi, Huggies e Unilever. Primeiro reconhecimento internacional." },
@@ -431,11 +449,11 @@ export default function Portfolio() {
         ],
         nowLabel: "Agora",
         now: [
-          "Liderando o conteúdo da Claro em esportes, entretenimento e branding, na Talent.",
+          "Cuidando da estratégia de influenciadores da Neutrogena, na Talent.",
           "Tocando a estratégia de conteúdo da Nilpel como projeto freelance.",
           "Sempre cavando cultura, subcultura e o que está prestes a virar tendência.",
         ],
-        nowUpdated: "Atualizado em maio de 2026",
+        nowUpdated: "Atualizado em agosto de 2026",
         portraitLabel: "Nicolas Bonati",
         ctaLabel: "Bora trabalhar juntos",
       },
@@ -456,7 +474,7 @@ export default function Portfolio() {
   };
 
   const t = copy[lang];
-  const clients = ["Claro", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
+  const clients = ["Claro", "Neutrogena", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
   const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "emmma says", "Kady Zadora"];
 
   /* ---------------------------- SCROLL ---------------------------- */
@@ -502,90 +520,125 @@ export default function Portfolio() {
   };
 
   /* ---- reusable expandable project row (index + drawer) ---- */
-  const ProjectRow = ({ proj, index, ac, open, onToggle }) => (
-    <div className={"nb-proj" + (open ? " open" : "")}>
-      <button className="nb-proj-head" onClick={onToggle} aria-expanded={open}>
-        <span className="nb-proj-num" style={{ color: ac }}>
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="nb-proj-mid">
-          <span className="nb-proj-name">{proj.title}</span>
-          <span className="nb-proj-meta">{proj.meta}</span>
-        </span>
-        <span className="nb-proj-toggle" style={open ? { borderColor: ac } : {}}>
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-            <path d="M7.5 1v13M1 7.5h13" stroke={open ? ac : "currentColor"} strokeWidth="1.6" />
-          </svg>
-        </span>
-      </button>
-      <div className="nb-drawer">
-        <div className="nb-drawer-inner">
-          <div className="nb-drawer-pad">
-            <div className={`nb-media${proj.youtube || proj.image ? " has-embed" : ""}`} style={proj.youtube || proj.image ? {} : { background: ac + "1f" }}>
-              {proj.youtube ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${proj.youtube}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
-                />
-              ) : proj.image ? (
-                <img
-                  src={proj.image}
-                  alt={proj.title}
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", borderRadius: 4 }}
-                />
-              ) : (
-                <>
-                  <span className="play" style={{ background: ac }}>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#fff" />
-                    </svg>
-                  </span>
-                  <span className="play-label" style={{ color: ac }}>{t.work.videoLabel}</span>
-                </>
-              )}
-            </div>
-            <div className="nb-drawer-copy">
-              <div className="nb-tags">
-                {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
+  const ProjectRow = ({ proj, index, ac, open, onToggle }) => {
+    // only the pieces that actually have an image — empty slots stay hidden
+    const pieces = Array.isArray(proj.gallery) ? proj.gallery.filter(Boolean) : [];
+    const hasGallery = pieces.length > 0 || Boolean(proj.boardImage);
+    const copyBlock = (
+      <div className="nb-drawer-copy">
+        <div className="nb-tags">
+          {proj.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
+        </div>
+        <p>{proj.p1}</p>
+        <p>{proj.p2}</p>
+        {proj.metrics && (
+          <div className="nb-metrics">
+            {proj.metrics.map((m, k) => (
+              <div className="nb-metric" key={k}>
+                <div className="nb-metric-v" style={{ color: ac }}>{m.v}</div>
+                <div className="nb-metric-l">{m.l}</div>
               </div>
-              <p>{proj.p1}</p>
-              <p>{proj.p2}</p>
-              {proj.metrics && (
-                <div className="nb-metrics">
-                  {proj.metrics.map((m, k) => (
-                    <div className="nb-metric" key={k}>
-                      <div className="nb-metric-v" style={{ color: ac }}>{m.v}</div>
-                      <div className="nb-metric-l">{m.l}</div>
+            ))}
+          </div>
+        )}
+        <div className="nb-credit">
+          <div className="nb-credit-row">
+            <span className="nb-credit-k">{t.work.roleLabel}</span>
+            <span className="nb-credit-v">{proj.role}</span>
+          </div>
+          {proj.recognition && (
+            <div className="nb-credit-row">
+              <span className="nb-credit-k">{t.work.recogLabel}</span>
+              <span className="nb-credit-v">{proj.recognition}</span>
+            </div>
+          )}
+          {proj.partners && (
+            <div className="nb-credit-row">
+              <span className="nb-credit-k">{t.work.partnersLabel}</span>
+              <span className="nb-credit-v">{proj.partners}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+
+    return (
+      <div className={"nb-proj" + (open ? " open" : "")}>
+        <button className="nb-proj-head" onClick={onToggle} aria-expanded={open}>
+          <span className="nb-proj-num" style={{ color: ac }}>
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className="nb-proj-mid">
+            <span className="nb-proj-name">{proj.title}</span>
+            <span className="nb-proj-meta">{proj.meta}</span>
+          </span>
+          <span className="nb-proj-toggle" style={open ? { borderColor: ac } : {}}>
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M7.5 1v13M1 7.5h13" stroke={open ? ac : "currentColor"} strokeWidth="1.6" />
+            </svg>
+          </span>
+        </button>
+        <div className="nb-drawer">
+          <div className="nb-drawer-inner">
+            {hasGallery ? (
+              <div className="nb-drawer-pad gallery">
+                {pieces.length > 0 && (
+                  <div className="nb-block">
+                    <div className="nb-block-label" style={{ color: ac }}>{proj.galleryLabel}</div>
+                    <div className="nb-gallery">
+                      {pieces.map((src, k) => (
+                        <div className="nb-gallery-cell" key={k}>
+                          <img src={src} alt={`${proj.title} — ${k + 1}`} />
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              )}
-              <div className="nb-credit">
-                <div className="nb-credit-row">
-                  <span className="nb-credit-k">{t.work.roleLabel}</span>
-                  <span className="nb-credit-v">{proj.role}</span>
-                </div>
-                {proj.recognition && (
-                  <div className="nb-credit-row">
-                    <span className="nb-credit-k">{t.work.recogLabel}</span>
-                    <span className="nb-credit-v">{proj.recognition}</span>
                   </div>
                 )}
-                {proj.partners && (
-                  <div className="nb-credit-row">
-                    <span className="nb-credit-k">{t.work.partnersLabel}</span>
-                    <span className="nb-credit-v">{proj.partners}</span>
+                {proj.boardImage && (
+                  <div className="nb-block">
+                    <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
+                    <div className="nb-board">
+                      <img src={proj.boardImage} alt={`${proj.title} — board`} />
+                    </div>
                   </div>
                 )}
+                <div className="nb-gallery-copy">{copyBlock}</div>
               </div>
-            </div>
+            ) : (
+              <div className="nb-drawer-pad">
+                <div className={`nb-media${proj.youtube || proj.image ? " has-embed" : ""}`} style={proj.youtube || proj.image ? {} : { background: ac + "1f" }}>
+                  {proj.youtube ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${proj.youtube}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
+                    />
+                  ) : proj.image ? (
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
+                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", borderRadius: 4 }}
+                    />
+                  ) : (
+                    <>
+                      <span className="play" style={{ background: ac }}>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <path d="M5 3.5v11l9-5.5-9-5.5z" fill="#fff" />
+                        </svg>
+                      </span>
+                      <span className="play-label" style={{ color: ac }}>{t.work.videoLabel}</span>
+                    </>
+                  )}
+                </div>
+                {copyBlock}
+              </div>
+            )}
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="nb">
@@ -808,6 +861,65 @@ export default function Portfolio() {
         .nb-credit-k { font-family: var(--mono); font-size: 11px; color: var(--ink-faint);
           width: 110px; flex-shrink: 0; padding-top: 2px; }
         .nb-credit-v { font-size: 14px; font-weight: 500; }
+
+        /* ---------- gallery layout (loose-pieces first) ---------- */
+        .nb-drawer-pad.gallery { display: block; padding: 12px 8px 56px; }
+        .nb-block { margin-bottom: 40px; }
+        .nb-block:last-of-type { margin-bottom: 32px; }
+        .nb-block-label { font-family: var(--mono); font-size: 12px;
+          letter-spacing: .04em; margin-bottom: 18px; display: flex;
+          align-items: center; gap: 12px; }
+        .nb-block-label::after { content: ""; flex: 1; height: 1px;
+          background: var(--line); }
+        .nb-gallery { display: grid; grid-template-columns: repeat(3, 1fr);
+          gap: 18px; }
+        .nb-gallery-cell { aspect-ratio: 4/5; border-radius: 4px;
+          overflow: hidden; position: relative; background: var(--bg-2);
+          border: 1px dashed transparent; display: flex; align-items: center;
+          justify-content: center; transition: transform .35s cubic-bezier(.16,1,.3,1);
+        }
+        .nb-gallery-cell:hover { transform: translateY(-3px); }
+        .nb-gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .nb-gallery-placeholder { display: flex; flex-direction: column;
+          align-items: center; justify-content: center; gap: 8px;
+          padding: 18px; text-align: center; }
+        .nb-gallery-num { font-family: var(--display); font-weight: 600;
+          font-size: clamp(36px, 5vw, 60px); letter-spacing: -.04em;
+          line-height: 1; }
+        .nb-gallery-hint { font-family: var(--mono); font-size: 11px;
+          color: var(--ink-faint); letter-spacing: .03em; }
+        .nb-board { border-radius: 4px; overflow: hidden;
+          border: 1px solid var(--line); background: var(--bg-2); }
+        .nb-board img { width: 100%; height: auto; display: block; }
+        .nb-gallery-copy { margin-top: 8px; max-width: 880px; }
+        .nb-gallery-copy .nb-drawer-copy { display: block; }
+        .nb-gallery-copy .nb-metrics { grid-template-columns: repeat(4, 1fr); }
+
+        /* ---------- back link ---------- */
+        .nb-backlink { display: inline-flex; align-items: center; gap: 10px;
+          font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+          background: transparent; border: 1px solid var(--line);
+          border-radius: 999px; padding: 7px 14px; margin-bottom: 28px;
+          transition: color .2s, border-color .2s, background .2s, transform .2s;
+        }
+        .nb-backlink:hover { color: var(--accent); border-color: var(--accent);
+          background: var(--bg-2); transform: translateX(-2px); }
+        .nb-backlink .arr { font-size: 14px; line-height: 1; }
+
+        /* ---------- more (empty state) ---------- */
+        .nb-empty { border: 1px dashed var(--line);
+          border-radius: 6px; padding: clamp(44px, 6vh, 72px) 32px;
+          display: flex; flex-direction: column; align-items: flex-start;
+          gap: 14px; background: var(--bg-2); margin-top: 18px; }
+        .nb-empty-title { font-family: var(--display); font-weight: 500;
+          font-size: clamp(24px, 3vw, 38px); letter-spacing: -.025em;
+          line-height: 1.05; max-width: 22ch; }
+        .nb-empty-sub { font-size: 15px; color: var(--ink-soft); max-width: 56ch; }
+        .nb-empty-meta { font-family: var(--mono); font-size: 12px;
+          color: var(--ink-faint); margin-top: 6px; display: flex;
+          align-items: center; gap: 9px; }
+        .nb-empty-meta::before { content: ""; width: 7px; height: 7px;
+          border-radius: 50%; background: var(--accent); }
 
         /* ---------- recognition ---------- */
         .nb-awards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
@@ -1047,6 +1159,8 @@ export default function Portfolio() {
           .nb-caps { grid-template-columns: 1fr; }
           .nb-contact-grid { grid-template-columns: 1fr; gap: 36px; }
           .nb-metrics { grid-template-columns: 1fr 1fr; }
+          .nb-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+          .nb-gallery-copy .nb-metrics { grid-template-columns: 1fr 1fr; }
           .nb-marquee-track { animation-duration: 24s; }
           .nb-band { padding: 40px 26px; }
           .nb-more-head { grid-template-columns: 32px 1fr auto; gap: 14px; padding: 22px 4px; }
@@ -1239,6 +1353,9 @@ export default function Portfolio() {
       {page === "work" && (
         <main className="nb-page">
           <section className="nb-pagehero nb-wrap">
+            <button className="nb-backlink rv" onClick={() => nav("home")}>
+              <span className="arr">←</span> {t.workpage.backHome}
+            </button>
             <div className="nb-kicker rv">{t.workpage.kicker}</div>
             <h1 className="nb-pagehero-name rv d1">
               {t.workpage.title}<span className="period">.</span>
@@ -1263,43 +1380,59 @@ export default function Portfolio() {
             </div>
           </section>
 
-          {/* more projects — compact, expandable index */}
+          {/* more projects — empty state, will be populated as new cases ship */}
           <section className="nb-section nb-wrap tight">
             <div className="nb-sub rv">{t.workpage.moreLabel}</div>
-            <div className="nb-more-hint rv">{t.workpage.moreHint}</div>
-            <div className="nb-more rv d1">
-              {t.workpage.more.map((m, i) => {
-                const open = openMore === i;
-                return (
-                  <div className={"nb-more-item" + (open ? " open" : "")} key={i}>
-                    <button className="nb-more-head" onClick={() => setOpenMore(open ? null : i)} aria-expanded={open}>
-                      <span className="nb-more-num">{String(i + 1).padStart(2, "0")}</span>
-                      <span className="nb-more-main">
-                        <span className="nb-more-top">
-                          <span className="nb-more-name">{m.title}</span>
-                          <span className="nb-more-meta">{m.meta}</span>
-                        </span>
-                        <span className="nb-tags">
-                          {m.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
-                        </span>
-                      </span>
-                      <span className="nb-more-toggle">
-                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                          <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.6" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div className="nb-more-drawer">
-                      <div className="nb-more-drawer-inner">
-                        <div className="nb-more-drawer-pad">
-                          <p className="nb-more-line">{m.line}</p>
-                          <span className="nb-more-wip">{t.workpage.wip}</span>
+            {t.workpage.more.length === 0 ? (
+              <div className="nb-empty rv d1">
+                <h3 className="nb-empty-title">{t.workpage.emptyTitle}</h3>
+                <p className="nb-empty-sub">{t.workpage.emptySub}</p>
+                <span className="nb-empty-meta">{t.workpage.emptyMeta}</span>
+              </div>
+            ) : (
+              <>
+                <div className="nb-more-hint rv">{t.workpage.moreHint}</div>
+                <div className="nb-more rv d1">
+                  {t.workpage.more.map((m, i) => {
+                    const open = openMore === i;
+                    return (
+                      <div className={"nb-more-item" + (open ? " open" : "")} key={i}>
+                        <button className="nb-more-head" onClick={() => setOpenMore(open ? null : i)} aria-expanded={open}>
+                          <span className="nb-more-num">{String(i + 1).padStart(2, "0")}</span>
+                          <span className="nb-more-main">
+                            <span className="nb-more-top">
+                              <span className="nb-more-name">{m.title}</span>
+                              <span className="nb-more-meta">{m.meta}</span>
+                            </span>
+                            <span className="nb-tags">
+                              {m.tags.map((tg, k) => <span className="nb-tag" key={k}>{tg}</span>)}
+                            </span>
+                          </span>
+                          <span className="nb-more-toggle">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                              <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.6" />
+                            </svg>
+                          </span>
+                        </button>
+                        <div className="nb-more-drawer">
+                          <div className="nb-more-drawer-inner">
+                            <div className="nb-more-drawer-pad">
+                              <p className="nb-more-line">{m.line}</p>
+                              <span className="nb-more-wip">{t.workpage.wip}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            <div style={{ marginTop: "clamp(32px, 4vh, 56px)" }}>
+              <button className="nb-backlink rv" onClick={() => nav("home")}>
+                <span className="arr">←</span> {t.workpage.backHome}
+              </button>
             </div>
 
             {/* cta band -> contact */}
@@ -1336,6 +1469,9 @@ export default function Portfolio() {
       {page === "about" && (
         <main className="nb-page">
           <section className="nb-pagehero nb-wrap">
+            <button className="nb-backlink rv" onClick={() => nav("home")}>
+              <span className="arr">←</span> {t.workpage.backHome}
+            </button>
             <div className="nb-kicker rv">{t.about.kicker}</div>
             <h1 className="nb-pagehero-name rv d1">
               {lang === "en" ? "About" : "Sobre"}<span className="period">.</span>
@@ -1407,6 +1543,12 @@ export default function Portfolio() {
               <div className="nb-now-updated rv">{t.about.nowUpdated}</div>
             </div>
 
+            <div style={{ marginTop: "clamp(32px, 4vh, 56px)" }}>
+              <button className="nb-backlink rv" onClick={() => nav("home")}>
+                <span className="arr">←</span> {t.workpage.backHome}
+              </button>
+            </div>
+
             {/* cta band -> contact */}
             <div className="nb-band rv">
               <div className="nb-band-title">
@@ -1441,6 +1583,9 @@ export default function Portfolio() {
       {page === "contact" && (
         <main className="nb-page">
           <section className="nb-pagehero nb-wrap">
+            <button className="nb-backlink rv" onClick={() => nav("home")}>
+              <span className="arr">←</span> {t.workpage.backHome}
+            </button>
             <div className="nb-kicker rv">{t.contact.kicker}</div>
             <h1 className="nb-contact-title rv d1">
               {t.contact.title.replace(".", "")}<span className="period">.</span>
@@ -1485,6 +1630,12 @@ export default function Portfolio() {
               <div className="nb-sub" style={{ marginBottom: 16 }}>{t.contact.availLabel}</div>
               <p>{t.contact.avail}</p>
               <div className="resp">{t.contact.responseLabel}</div>
+            </div>
+
+            <div style={{ marginTop: "clamp(32px, 4vh, 56px)" }}>
+              <button className="nb-backlink rv" onClick={() => nav("home")}>
+                <span className="arr">←</span> {t.workpage.backHome}
+              </button>
             </div>
           </section>
 
