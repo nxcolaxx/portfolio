@@ -962,6 +962,8 @@ export default function Portfolio() {
         .nb-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
           background: var(--line); border: 1px solid var(--line); margin: 4px 0 22px; }
         .nb-metric { background: var(--bg); padding: 18px; }
+        /* two columns: an odd last metric would leave a bare grid cell */
+        .nb-metric:last-child:nth-child(odd) { grid-column: 1 / -1; }
         .nb-metric-v { font-family: var(--display); font-weight: 600;
           font-size: clamp(24px, 2.6vw, 34px); letter-spacing: -.03em; line-height: 1; }
         .nb-metric-l { font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
