@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 /* ============================================================
    NICOLAS BONATI — PORTFOLIO  ·  v0.4  (multi-page)
-   Influencer & Content Strategist
+   Influence & Content Strategist
    Pages: Home · Work · About · Contact
    Editorial-architectural · light · index-plus-drawer
    ============================================================
@@ -226,7 +226,7 @@ export default function Portfolio() {
     en: {
       nav: { home: "Home", work: "Work", about: "About", contact: "Contact" },
       hero: {
-        eyebrow: "Influencer & Content Strategist",
+        eyebrow: "Influence & Content Strategist",
         name1: "Nicolas",
         name2: "Bonati",
         tagline: "Strategy, content and influencer curation. In that order.",
@@ -239,7 +239,7 @@ export default function Portfolio() {
         kicker: "Approach",
         title: "",
         items: [
-          { n: "i", title: "Influencer Strategy", body: "Curation and the strategy that ties a creator to a product. I can tell real affinity with a brand from pure volume, and I defend the choice in front of the client." },
+          { n: "i", title: "Influence Strategy", body: "Curation and the strategy that ties a creator to a product. I can tell real affinity with a brand from pure volume, and I defend the choice in front of the client." },
           { n: "ii", title: "Creative Strategy", body: "Insight to concept, concept to a campaign that runs on every channel. I spent years validating hypotheses about behavior, so an idea gets tested before it turns into budget." },
           { n: "iii", title: "Content Direction", body: "Concept, creative, production, delivery. I lead the team that takes it from a line on a deck to the post going live: real time, launches, whole brand worlds." },
         ],
@@ -419,15 +419,15 @@ export default function Portfolio() {
       profile: {
         kicker: "Profile",
         title: "Strategy that starts with research, not assumptions.",
-        body: "Today I'm an influencer and content strategist at Talent, on Neutrogena's Sun and Skin brands: creator curation, creative strategy, and a campaign for each product in the range, against national targets. Before advertising I spent four years in product and fintech teams, where a hypothesis about behavior had to be proven. That is the basis of how I work now.",
+        body: "Today I'm an influence and content strategist at Talent, on Neutrogena's Sun and Skin brands: creator curation, creative strategy, and a campaign for each product in the range, against national targets. Before advertising I spent four years in product and fintech teams, where a hypothesis about behavior had to be proven. That is the basis of how I work now.",
         cta: "See how I work",
       },
       about: {
         kicker: "About",
         title: "",
-        p1: "I'm an influencer and content strategist. Seven years across product and advertising — Nubank, K21, Greenpark, BFerraz and Talent — with campaigns for Claro, Sanofi, Loft, Unilever, Huggies and Neutrogena.",
+        p1: "I'm an influence and content strategist. Seven years across product and advertising — Nubank, K21, Greenpark, BFerraz and Talent — with campaigns for Claro, Sanofi, Loft, Unilever, Huggies and Neutrogena.",
         p2: "Three creative awards: Gold at the Muse Awards and at Prémios Lusófonos for Sanofi, Silver at AMPRO Globes for Loft. In numbers: 67M views on campaign films, 39M impacts across a World Cup, and engagement 24 times the healthcare benchmark.",
-        p3: "Today at Talent I run influencer and content strategy for Neutrogena's Sun and Skin brands: curation, creative strategy, and a campaign for each product in the range, working alongside major names in beauty and lifestyle. I came into advertising from product and fintech, where a hypothesis about behavior had to be proven before it shipped.",
+        p3: "Today at Talent I run influence and content strategy for Neutrogena's Sun and Skin brands: curation, creative strategy, and a campaign for each product in the range, working alongside major names in beauty and lifestyle. I came into advertising from product and fintech, where a hypothesis about behavior had to be proven before it shipped.",
         capsLabel: "What I bring to your team",
         caps: [
           "Influencer work end to end: curation, strategy, and the plan that makes a creator deliver more than a post.",
@@ -437,7 +437,7 @@ export default function Portfolio() {
         ],
         pathLabel: "The path",
         path: [
-          { range: "2025 — now", label: "Talent", current: true, body: "Influencer and content strategist on Neutrogena's Sun and Skin brands — curation, creative strategy and a campaign per product, against national targets. Before that, Content Supervisor for Claro Brasil: Rio Open, CCXP and streaming launches." },
+          { range: "2025 — now", label: "Talent", current: true, body: "Influence and content strategist on Neutrogena's Sun and Skin brands — curation, creative strategy and a campaign per product, against national targets. Before that, Content Supervisor for Claro Brasil: Rio Open, CCXP and streaming launches." },
           { range: "2025", label: "BFerraz", body: "Content Manager, leading the creative and community team for Loft and Baixio. Promoted from Supervisor to Manager." },
           { range: "2024 — 2025", label: "Independent — Music Industry", body: "Creative strategy and direction for international music artists across Asia, North America and Europe. End-to-end creative direction." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. 360° campaigns for Sanofi, Huggies and Unilever. First international recognition." },
@@ -447,7 +447,7 @@ export default function Portfolio() {
         ],
         nowLabel: "Now",
         now: [
-          "Influencer and content strategy for Neutrogena's Sun and Skin brands, at Talent.",
+          "Influence and content strategy for Neutrogena's Sun and Skin brands, at Talent.",
           "Running content strategy at Nilpel, freelance.",
           "Mapping new names and formats before they saturate.",
         ],
@@ -462,7 +462,7 @@ export default function Portfolio() {
         directLabel: "Direct",
         elsewhereLabel: "Elsewhere",
         availLabel: "Availability",
-        avail: "Available for projects, creative partnerships and full-time roles: influencer strategy, content direction and campaigns. Based in São Paulo, working with brands and artists anywhere.",
+        avail: "Available for projects, creative partnerships and full-time roles: influence strategy, content direction and campaigns. Based in São Paulo, working with brands and artists anywhere.",
         whatsapp: "WhatsApp",
         email: "Email",
         responseLabel: "Usually replies within 30 minutes",
