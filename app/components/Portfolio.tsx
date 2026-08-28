@@ -1324,6 +1324,9 @@ export default function Portfolio() {
           .nb-navset { display: none; }
           .nb-burger { display: block; }
           .nb-hero { min-height: 92svh; padding-top: 110px; }
+          /* .nb-wrap above is a shorthand, so it wipes the padding-top these
+             set outside the query — restate it or they slide under the header */
+          .nb-pagehero { padding-top: 130px; }
           .nb-hero-bottom { flex-direction: column; align-items: flex-start; gap: 30px; }
           /* the giant name plus a circle will not fit side by side on a phone */
           .nb-hero-head { flex-direction: column-reverse; align-items: flex-start;
