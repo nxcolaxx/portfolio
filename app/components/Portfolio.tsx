@@ -229,7 +229,7 @@ export default function Portfolio() {
         eyebrow: "Influence & Content Strategist",
         name1: "Nicolas",
         name2: "Bonati",
-        tagline: "Strategy, content and influencer curation. In that order.",
+        tagline: "Strategy, content and influence.",
         metaA: "Talent — Neutrogena Sun & Skin",
         metaB: "São Paulo, Brazil",
         metaC: "Open to projects and full-time roles",
@@ -419,7 +419,7 @@ export default function Portfolio() {
       profile: {
         kicker: "Profile",
         title: "Strategy that starts with research, not assumptions.",
-        body: "Today I'm an influence and content strategist at Talent, on Neutrogena's Sun and Skin brands: creator curation, creative strategy, and a campaign for each product in the range, against national targets. Before advertising I spent four years in product and fintech teams, where a hypothesis about behavior had to be proven. That is the basis of how I work now.",
+        body: "Today I'm an influence and content strategist at Talent, on Neutrogena's Sun and Skin brands. The brief is relevance: hold the brand's ground against digital-native competitors in a saturated category, and keep its community close instead of renting its attention. Influence, campaign and behavior run as one plan — a campaign for each product in the range, against national targets. Before advertising I spent four years in product and fintech teams, where a hypothesis about behavior had to be proven. That is the basis of how I work now.",
         cta: "See how I work",
       },
       about: {
@@ -427,17 +427,18 @@ export default function Portfolio() {
         title: "",
         p1: "I'm an influence and content strategist. Seven years across product and advertising — Nubank, K21, Greenpark, BFerraz and Talent — with campaigns for Claro, Sanofi, Loft, Unilever, Huggies and Neutrogena.",
         p2: "Three creative awards: Gold at the Muse Awards and at Prémios Lusófonos for Sanofi, Silver at AMPRO Globes for Loft. In numbers: 67M views on campaign films, 39M impacts across a World Cup, and engagement 24 times the healthcare benchmark.",
-        p3: "Today at Talent I run influence and content strategy for Neutrogena's Sun and Skin brands: curation, creative strategy, and a campaign for each product in the range, working alongside major names in beauty and lifestyle. I came into advertising from product and fintech, where a hypothesis about behavior had to be proven before it shipped.",
+        p3: "Today at Talent I run influence and content strategy for Neutrogena's Sun and Skin brands. It's a seat that joins influence, campaign and behavior in the same plan: make an established brand matter again, dig out its space in a category saturated with digital natives, and keep its community close. A campaign for each product in the range, alongside major names in beauty and lifestyle. I came into advertising from product and fintech, where a hypothesis about behavior had to be proven before it shipped.",
         capsLabel: "What I bring to your team",
         caps: [
           "Influencer work end to end: curation, strategy, and the plan that makes a creator deliver more than a post.",
           "Campaigns that don't stop at social: digital, offline, live events, and the integration between them.",
           "Teams that ship. I've led creative, community and production, and got promoted mid-project doing it.",
           "Numbers a client can take upstairs. Every case on this site has them, and I built the reporting behind them.",
+          "Ad creative analysis, and the media campaign around it. I read a set of creatives, tell which one is carrying the result, and build the campaign in Meta Ads.",
         ],
         pathLabel: "The path",
         path: [
-          { range: "2025 — now", label: "Talent", current: true, body: "Influence and content strategist on Neutrogena's Sun and Skin brands — curation, creative strategy and a campaign per product, against national targets. Before that, Content Supervisor for Claro Brasil: Rio Open, CCXP and streaming launches." },
+          { range: "2025 — now", label: "Talent", current: true, body: "Influence and content strategist on Neutrogena's Sun and Skin brands — influence, campaign and behavior in one plan, a campaign per product against national targets, and the job of winning relevance back against digital-native competitors. Before that, Content Supervisor for Claro Brasil: Rio Open, CCXP and streaming launches." },
           { range: "2025", label: "BFerraz", body: "Content Manager, leading the creative and community team for Loft and Baixio. Promoted from Supervisor to Manager." },
           { range: "2024 — 2025", label: "Independent — Music Industry", body: "Creative strategy and direction for international music artists across Asia, North America and Europe. End-to-end creative direction." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. 360° campaigns for Sanofi, Huggies and Unilever. First international recognition." },
@@ -447,7 +448,7 @@ export default function Portfolio() {
         ],
         nowLabel: "Now",
         now: [
-          "Influence and content strategy for Neutrogena's Sun and Skin brands, at Talent.",
+          "Influence, campaign and behavior for Neutrogena's Sun and Skin brands, at Talent.",
           "Running content strategy at Nilpel, freelance.",
           "Mapping new names and formats before they saturate.",
         ],
@@ -476,7 +477,7 @@ export default function Portfolio() {
         eyebrow: "Estrategista de Influência e Conteúdo",
         name1: "Nicolas",
         name2: "Bonati",
-        tagline: "Estratégia, conteúdo e curadoria de influência. Nessa ordem.",
+        tagline: "Estratégia, conteúdo e influência.",
         metaA: "Talent — Neutrogena Sun & Skin",
         metaB: "São Paulo, Brasil",
         metaC: "Aberto a projetos e posições fixas",
@@ -666,7 +667,7 @@ export default function Portfolio() {
       profile: {
         kicker: "Perfil",
         title: "Estratégia que começa em pesquisa, não em achismo.",
-        body: "Hoje sou estrategista de influência e conteúdo na Talent, nas marcas de Sun e Skin da Neutrogena: curadoria, defesa dos nomes, estratégia criativa e uma campanha para cada produto da linha, com meta nacional. Antes da publicidade, passei quatro anos em time de produto e de fintech, onde hipótese de comportamento tinha que ser provada. É a base de como eu trabalho hoje.",
+        body: "Hoje sou estrategista de influência e conteúdo na Talent, nas marcas de Sun e Skin da Neutrogena. O briefing é relevância: segurar o espaço da marca num mercado saturado, contra concorrente que já nasceu digital, e manter a comunidade por perto em vez de alugar a atenção dela. Influência, campanha e comportamento rodam como um plano só — uma campanha para cada produto da linha, com meta nacional. Antes da publicidade, passei quatro anos em time de produto e de fintech, onde hipótese de comportamento tinha que ser provada. É a base de como eu trabalho hoje.",
         cta: "Ver como eu trabalho",
       },
       about: {
@@ -674,17 +675,18 @@ export default function Portfolio() {
         title: "",
         p1: "Sou estrategista de influência e conteúdo. Sete anos entre produto e publicidade — Nubank, K21, Greenpark, BFerraz e Talent — assinando campanhas para Claro, Sanofi, Loft, Unilever, Huggies e Neutrogena.",
         p2: "Três prêmios de criação: ouro no Muse Awards e nos Prémios Lusófonos com a Sanofi, prata no AMPRO Globes com a Loft. Nos números: 67 milhões de views em filme de campanha, 39 milhões de impactos numa Copa do Mundo e engajamento 24 vezes acima do benchmark de saúde.",
-        p3: "Hoje, na Talent, cuido da estratégia de influência e conteúdo das marcas de Sun e Skin da Neutrogena: curadoria, defesa dos nomes, estratégia criativa e campanha para cada produto da linha, ao lado de nomes grandes de beleza e lifestyle. Cheguei à publicidade vindo de produto e fintech, onde hipótese de comportamento tinha que ser provada antes de ir pro ar.",
+        p3: "Hoje, na Talent, cuido da estratégia de influência e conteúdo das marcas de Sun e Skin da Neutrogena. É uma posição que junta influência, campanha e comportamento no mesmo plano: fazer uma marca consolidada voltar a ser relevante, cavar o espaço dela num mercado saturado e cheio de concorrente nativo digital, e manter a comunidade por perto. Uma campanha para cada produto da linha, ao lado de nomes grandes de beleza e lifestyle. Cheguei à publicidade vindo de produto e fintech, onde hipótese de comportamento tinha que ser provada antes de ir pro ar.",
         capsLabel: "O que eu trago para o seu time",
         caps: [
           "Influência de ponta a ponta: curadoria, estratégia e o plano que faz o criador entregar mais do que post.",
           "Campanha que não para no social: digital, offline, evento ao vivo e a integração entre eles.",
           "Time que entrega. Já liderei criação, community e produção, e fui promovido no meio do projeto fazendo isso.",
           "Números que sustentam apresentação de diretoria. Todo case daqui tem, e o relatório por trás fui eu que montei.",
+          "Análise de criativo de anúncio, e a campanha de mídia em volta. Leio um conjunto de criativos, digo qual está sustentando o resultado, e monto a campanha no Meta Ads.",
         ],
         pathLabel: "A trajetória",
         path: [
-          { range: "2025 — agora", label: "Talent", current: true, body: "Estrategista de influência e conteúdo das marcas de Sun e Skin da Neutrogena — curadoria, defesa dos nomes, estratégia criativa e campanha por produto, com meta nacional. Antes, Supervisor de Conteúdo da Claro Brasil: Rio Open, CCXP e lançamento em streaming." },
+          { range: "2025 — agora", label: "Talent", current: true, body: "Estrategista de influência e conteúdo das marcas de Sun e Skin da Neutrogena — influência, campanha e comportamento num plano só, campanha por produto com meta nacional, e a missão de recuperar relevância contra concorrente nativo digital. Antes, Supervisor de Conteúdo da Claro Brasil: Rio Open, CCXP e lançamento em streaming." },
           { range: "2025", label: "BFerraz", body: "Gerente de Conteúdo, à frente do time de criação e community management de Loft e Baixio. Promovido de Supervisor a Gerente." },
           { range: "2024 — 2025", label: "Independente — Indústria Musical", body: "Estratégia e direção criativa para artistas internacionais na Ásia, América do Norte e Europa. Direção criativa de ponta a ponta." },
           { range: "2023 — 2024", label: "Greenpark", body: "Digital Brand Strategist. Campanhas 360° para Sanofi, Huggies e Unilever. Primeiro reconhecimento internacional." },
@@ -694,7 +696,7 @@ export default function Portfolio() {
         ],
         nowLabel: "Agora",
         now: [
-          "Estratégia de influência e conteúdo das marcas de Sun e Skin da Neutrogena, na Talent.",
+          "Influência, campanha e comportamento nas marcas de Sun e Skin da Neutrogena, na Talent.",
           "Tocando a estratégia de conteúdo da Nilpel, como freelancer.",
           "Mapeando novos nomes e formatos antes de saturarem.",
         ],
@@ -1149,6 +1151,7 @@ export default function Portfolio() {
         .nb-cap .cn { font-family: var(--mono); font-size: 12px; color: var(--accent);
           flex-shrink: 0; }
         .nb-cap p { font-size: 15.5px; }
+        .nb-cap:last-child:nth-child(odd) { grid-column: 1 / -1; }
         .nb-now { display: grid; gap: 0; }
         .nb-now-item { display: flex; gap: 18px; padding: 18px 0;
           border-top: 1px solid var(--line-soft); align-items: flex-start; }
