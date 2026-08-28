@@ -87,6 +87,8 @@ const ProjectCard = ({ proj, ac, open, onToggle, openLabel, closeLabel }) => {
 /* the full case, opened in place under the card */
 const CaseDetail = ({ proj, ac, labels, onClose }) => {
   const hasBoard = Boolean(proj.boardImage);
+  /* board or reels: the copy runs full width and the video placeholder goes */
+  const wide = hasBoard || Boolean(proj.reels);
   const copyBlock = (
     <div className="nb-drawer-copy">
       <div className="nb-tags">
@@ -148,7 +150,7 @@ const CaseDetail = ({ proj, ac, labels, onClose }) => {
           {labels.closeLabel} <span style={{ fontSize: 13, lineHeight: 1 }}>✕</span>
         </button>
       </div>
-      <div className={"nb-case-grid" + (hasBoard ? " stacked" : "")}>
+      <div className={"nb-case-grid" + (wide ? " stacked" : "")}>
         {proj.youtube ? (
           <div className="nb-media has-embed">
             <iframe
@@ -158,7 +160,7 @@ const CaseDetail = ({ proj, ac, labels, onClose }) => {
               style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0, borderRadius: 4 }}
             />
           </div>
-        ) : !hasBoard ? (
+        ) : !wide ? (
           <div className="nb-media" style={{ background: ac + "1f" }}>
             <span className="play" style={{ background: ac }}>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -170,6 +172,33 @@ const CaseDetail = ({ proj, ac, labels, onClose }) => {
         ) : null}
         {copyBlock}
       </div>
+      {proj.reels && (
+        <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
+          <div className="nb-block-label" style={{ color: ac }}>{proj.reelsLabel}</div>
+          {/* Instagram's own embed: the creators keep control of their film,
+              and none of their footage is rehosted here */}
+          <div className="nb-reels">
+            {proj.reels.map((r) => (
+              <figure className="nb-reel" key={r.code}>
+                {/* the frame crops the embed's action bar: these posts are here
+                    for the work, not for their like counts */}
+                <div className="nb-reel-frame">
+                  <iframe
+                    src={`https://www.instagram.com/reel/${r.code}/embed`}
+                    title={`@${r.handle}`}
+                    loading="lazy"
+                    scrolling="no"
+                  />
+                </div>
+                <figcaption>
+                  <a href={`https://www.instagram.com/reel/${r.code}/`}
+                    target="_blank" rel="noopener noreferrer">@{r.handle}</a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
       {proj.boardImage && (
         <div className="nb-block" style={{ marginTop: 28, marginBottom: 0 }}>
           <div className="nb-block-label" style={{ color: ac }}>{proj.boardLabel}</div>
@@ -334,7 +363,7 @@ export default function Portfolio() {
             tags: ["Influencers", "Sports", "Product launch"],
             pitch: "220 creators hijacked the World Cup for Claro: 500+ pieces, 39M impacts.",
             p1: "The World Cup belongs to whoever shows up loudest. Claro showed up with 220 influencer names at once and used the tournament to carry a product story: the new 5G and Claro Multi benefits.",
-            p2: "More than 500 pieces mapped to the game calendar. A product announcement is easy to scroll past. Something that shows up every match day, from the people you already follow, is not.",
+            p2: "More than 500 pieces mapped to the game calendar, under #OndeTemTorcidaTemClaro. A product announcement is easy to scroll past. Something that shows up every match day, from the people you already follow, is not — and the comments came back in the same register as the films. Under Marina Guaragna's, people answered the joke with their own version of it: “de 4 em 4 anos passo por isso”. That is the tell that a paid post landed as content.",
             metrics: [
               { v: "39M", l: "impacts" },
               { v: "37M", l: "impressions" },
@@ -343,6 +372,15 @@ export default function Portfolio() {
               { v: "220", l: "influencer names" },
               { v: "160K", l: "organic interactions" },
             ],
+            thumb: "/claro-card.jpg",
+            reels: [
+              { handle: "rafaellatuma", code: "DaoElfHPLpU" },
+              { handle: "ofaustocarvalho", code: "DaVeMAhhW_H" },
+              { handle: "marinaguaragna", code: "DaBfT6XSxhK" },
+              { handle: "pedrofariarod", code: "DZYfNKIJ3wa" },
+              { handle: "eusoufabao", code: "DZgAV4jRToe" },
+            ],
+            reelsLabel: "Five of the films — 15M followers between these creators alone",
             role: "Influencer strategy & content direction",
           },
           {
@@ -609,7 +647,7 @@ export default function Portfolio() {
             tags: ["Influenciadores", "Esportes", "Lançamento de produto"],
             pitch: "220 criadores hackearam a Copa pela Claro: 500+ conteúdos e 39MM de impactos.",
             p1: "Copa é de quem aparece mais alto. A Claro apareceu com 220 nomes de influenciador de uma vez e usou o torneio pra carregar uma história de produto: os novos benefícios do 5G e do Claro Multi.",
-            p2: "Mais de 500 conteúdos encaixados no calendário dos jogos. Anúncio de produto é fácil de passar reto. Uma coisa que aparece todo dia de jogo, na mão de quem você já segue, não é.",
+            p2: "Mais de 500 conteúdos encaixados no calendário dos jogos, sob a #OndeTemTorcidaTemClaro. Anúncio de produto é fácil de passar reto. Uma coisa que aparece todo dia de jogo, na mão de quem você já segue, não é — e o comentário voltou no mesmo registro do filme. No da Marina Guaragna, gente respondendo a piada com a própria versão dela: “de 4 em 4 anos passo por isso”. É o sinal de que a publi entrou como conteúdo.",
             metrics: [
               { v: "39MM", l: "de impactos" },
               { v: "37MM", l: "de impressões" },
@@ -618,6 +656,15 @@ export default function Portfolio() {
               { v: "220", l: "nomes de influenciador" },
               { v: "160K", l: "interações orgânicas" },
             ],
+            thumb: "/claro-card.jpg",
+            reels: [
+              { handle: "rafaellatuma", code: "DaoElfHPLpU" },
+              { handle: "ofaustocarvalho", code: "DaVeMAhhW_H" },
+              { handle: "marinaguaragna", code: "DaBfT6XSxhK" },
+              { handle: "pedrofariarod", code: "DZYfNKIJ3wa" },
+              { handle: "eusoufabao", code: "DZgAV4jRToe" },
+            ],
+            reelsLabel: "Cinco dos filmes — 15 milhões de seguidores só nesses criadores",
             role: "Estratégia de influenciadores e direção de conteúdo",
           },
           {
@@ -1079,6 +1126,20 @@ export default function Portfolio() {
         /* width/height attrs on the img give the browser the intrinsic ratio,
            so the row keeps its height before the image decodes */
         .nb-board img { width: 100%; height: auto; display: block; }
+        /* Instagram's embed breaks under ~326px, so a track never goes below it */
+        .nb-reels { display: grid; gap: 18px;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+        .nb-reel { margin: 0; min-width: 0; }
+        /* the embed is taller than the window: the overflow hides its bottom bar */
+        .nb-reel-frame { position: relative; aspect-ratio: 20 / 26; overflow: hidden;
+          border: 1px solid var(--line); border-radius: 4px; background: var(--bg-2); }
+        .nb-reel-frame iframe { position: absolute; top: 0; left: 0;
+          width: 100%; height: 139%; border: 0; display: block; }
+        .nb-reel figcaption { display: flex; justify-content: space-between; gap: 12px;
+          font-family: var(--mono); font-size: 11px; color: var(--ink-faint);
+          padding-top: 9px; }
+        .nb-reel figcaption a { border-bottom: 1px solid var(--line); }
+        .nb-reel figcaption a:hover { color: var(--accent); border-color: var(--accent); }
 
         /* ---------- back link ---------- */
         .nb-backlink { display: inline-flex; align-items: center; gap: 10px;
@@ -1435,6 +1496,12 @@ export default function Portfolio() {
           .nb-pillars { grid-template-columns: 1fr; }
           .nb-awards { grid-template-columns: 1fr; }
           .nb-caps { grid-template-columns: 1fr; }
+          /* One per row, and pulled out to the panel's edges: the case padding
+             would leave ~293px and Instagram's embed clips below ~326px. */
+          .nb-reels { grid-template-columns: 1fr;
+            margin-left: calc(-1 * clamp(20px, 2.6vw, 36px));
+            margin-right: calc(-1 * clamp(20px, 2.6vw, 36px)); }
+          .nb-reel figcaption { padding-left: 4px; padding-right: 4px; }
           .nb-contact-grid { grid-template-columns: 1fr; gap: 36px; }
           .nb-metrics { grid-template-columns: 1fr 1fr; }
           .nb-cards { grid-template-columns: 1fr; }
