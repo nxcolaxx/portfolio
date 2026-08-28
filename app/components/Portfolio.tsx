@@ -816,6 +816,27 @@ export default function Portfolio() {
     setOpenProject(null);
   }, [page]);
 
+  /* ---- bring a freshly opened case into view ----
+     The panel mounts in a full-width row under its card, so on a card you
+     just scrolled to it can open entirely below the fold and read as a dead
+     click. scrollIntoView rather than window.scrollTo: the latter is a no-op
+     in some embedded viewers. The fixed header is cleared by scroll-margin. */
+  useEffect(() => {
+    if (openProject === null) return;
+    const panel = document.querySelector(".nb-case");
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const header = document.querySelector(".nb-header");
+    const headerH = header ? header.getBoundingClientRect().height : 64;
+    // leave it alone only when the panel's own top edge is already framed;
+    // "lots of panel on screen" is not enough — you can land mid-panel with
+    // the title above the fold and never see what opened
+    if (r.top >= headerH && r.top < window.innerHeight * 0.5) return;
+    // instant, like the page-change scroll above: smooth is silently ignored
+    // by some embedded viewers, which leaves the panel off screen
+    panel.scrollIntoView({ block: "start" });
+  }, [openProject]);
+
   /* ---------------------------- REVEAL ---------------------------- */
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -1364,7 +1385,8 @@ export default function Portfolio() {
         .nb-card:hover .nb-card-foot .sign { transform: translateX(3px); }
 
         /* ---------- expanded case panel ---------- */
-        .nb-case { grid-column: 1 / -1; border: 1px solid var(--ink);
+        /* clears the fixed header when the panel is scrolled into view */
+        .nb-case { scroll-margin-top: 88px; grid-column: 1 / -1; border: 1px solid var(--ink);
           border-radius: 6px; background: var(--bg-2);
           padding: clamp(20px, 2.6vw, 36px);
           animation: caseIn .5s cubic-bezier(.16,1,.3,1); }
