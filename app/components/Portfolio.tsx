@@ -121,6 +121,21 @@ const CaseDetail = ({ proj, ac, labels, onClose }) => {
             <span className="nb-credit-v">{proj.partners}</span>
           </div>
         )}
+        {proj.press && (
+          <div className="nb-credit-row">
+            <span className="nb-credit-k">{labels.pressLabel}</span>
+            <span className="nb-credit-v">
+              {proj.press.map((pr, k) => (
+                <React.Fragment key={pr.url}>
+                  {k > 0 && " · "}
+                  <a className="nb-press" href={pr.url} target="_blank" rel="noopener noreferrer">
+                    {pr.name}
+                  </a>
+                </React.Fragment>
+              ))}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -246,11 +261,12 @@ export default function Portfolio() {
       },
       work: {
         kicker: "Selected Work",
-        title: "Five cases. Same method every time.",
+        title: "Six cases. Same method every time.",
         hint: "Open a case. The numbers are inside",
         roleLabel: "Role",
         recogLabel: "Recognition",
         partnersLabel: "Partners",
+        pressLabel: "In the press",
         videoLabel: "video — coming soon",
         openLabel: "Open case",
         closeLabel: "Close case",
@@ -284,6 +300,32 @@ export default function Portfolio() {
             boardW: 2000,
             boardH: 1419,
             boardLabel: "The board — full layout",
+          },
+          {
+            title: "Carnival with Paolla",
+            home: true,
+            meta: "Airbnb · BFerraz · 2025 — 26",
+            badge: "Press",
+            image: "/ab-card.jpg",
+            tags: ["Live marketing", "Talent strategy", "Experience"],
+            pitch: "38 million followers, ten spots. Airbnb's Carnival Original, hosted by Paolla Oliveira.",
+            p1: "Airbnb wanted Experiences to land in Brazil, and Carnival is the one week the country hands over its attention without being asked. With the creative team at BFerraz I helped build an Airbnb Original around Paolla Oliveira — Queen of the Cordão da Bola Preta, the oldest bloco in Rio, founded in 1918 and listed as state heritage.",
+            p2: "The name was the strategy. Paolla is not a rented face: seven seasons as a samba school queen, and a life actually lived in Rio — which is the thing an Airbnb guest is paying for. Two days, ten people, with the Cordão da Bola Preta: the bloco's historic HQ, customising the 2026 shirt, the feijoada, a percussion workshop with the bateria, a samba class with Paolla, and Carnival Saturday from the top of the Bola Preta sound truck. I worked the name strategy, the live-marketing plan and the content that came out of it.",
+            metrics: [
+              { v: "38M+", l: "followers behind the host" },
+              { v: "10", l: "spots, 2 per booking" },
+              { v: "2 days", l: "of live experience" },
+            ],
+            role: "Name strategy, live marketing & content",
+            partners: "Paolla Oliveira · Cordão da Bola Preta",
+            press: [
+              { name: "Meio & Mensagem", url: "https://www.meioemensagem.com.br/marketing/airbnb-promove-experiencia-com-paolla-oliveira-no-carnaval" },
+              { name: "Veja", url: "https://veja.abril.com.br/coluna/o-mundo-de-sofia/junto-com-o-airbnb-paolla-oliveira-assumira-novo-posto-no-carnaval-do-rio/" },
+            ],
+            boardImage: "/ab-board.jpg",
+            boardW: 2000,
+            boardH: 1333,
+            boardLabel: "The samba class, Cordão da Bola Preta HQ · photo Ángel Castellanos / Airbnb",
           },
           {
             title: "Hacking the World Cup",
@@ -364,7 +406,7 @@ export default function Portfolio() {
         title: "Work",
         sub: "Campaigns, content and influencer work across brand, sport, music, healthcare and live events. Every case here has the numbers attached.",
         homeHint: "The highlights are below. Every project lives on the Work page.",
-        homeCta: "See all ten projects",
+        homeCta: "See all eleven projects",
         featuredLabel: "Featured",
         moreLabel: "More projects",
         moreHint: "Short versions. Full cases in progress",
@@ -494,11 +536,12 @@ export default function Portfolio() {
       },
       work: {
         kicker: "Trabalhos Selecionados",
-        title: "Cinco cases. Sempre o mesmo método.",
+        title: "Seis cases. Sempre o mesmo método.",
         hint: "Abra um case. Os números estão dentro",
         roleLabel: "Função",
         recogLabel: "Reconhecimento",
         partnersLabel: "Parcerias",
+        pressLabel: "Na imprensa",
         videoLabel: "vídeo — em breve",
         openLabel: "Abrir case",
         closeLabel: "Fechar case",
@@ -532,6 +575,32 @@ export default function Portfolio() {
             boardW: 2000,
             boardH: 1419,
             boardLabel: "O board — layout completo",
+          },
+          {
+            title: "Carnaval com Paolla",
+            home: true,
+            meta: "Airbnb · BFerraz · 2025 — 26",
+            badge: "Imprensa",
+            image: "/ab-card.jpg",
+            tags: ["Live marketing", "Estratégia de nome", "Experiência"],
+            pitch: "38 milhões de seguidores, dez vagas. O Original de Carnaval do Airbnb, com Paolla Oliveira.",
+            p1: "O Airbnb queria emplacar as Experiências no Brasil, e o Carnaval é a única semana em que o país entrega a atenção sem ninguém precisar pedir. Com o time de criação da BFerraz, ajudei a construir um Original do Airbnb em torno de Paolla Oliveira — Rainha do Cordão da Bola Preta, o bloco mais antigo do Rio, fundado em 1918 e tombado como patrimônio do estado.",
+            p2: "O nome era a estratégia. Paolla não é rosto alugado: sete temporadas como rainha de bateria e uma vida de fato vivida no Rio — que é justamente o que o hóspede do Airbnb está comprando. Dois dias, dez pessoas, com o Cordão da Bola Preta: a sede histórica do bloco, a customização da camisa de 2026, a feijoada, a oficina de percussão com a bateria, a aula de samba com a Paolla e o sábado de Carnaval em cima do trio do Bola Preta. Cuidei da estratégia de nome, do plano de live marketing e do conteúdo que saiu dali.",
+            metrics: [
+              { v: "38M+", l: "seguidores da anfitriã" },
+              { v: "10", l: "vagas, 2 por reserva" },
+              { v: "2 dias", l: "de experiência ao vivo" },
+            ],
+            role: "Estratégia de nome, live marketing e conteúdo",
+            partners: "Paolla Oliveira · Cordão da Bola Preta",
+            press: [
+              { name: "Meio & Mensagem", url: "https://www.meioemensagem.com.br/marketing/airbnb-promove-experiencia-com-paolla-oliveira-no-carnaval" },
+              { name: "Veja", url: "https://veja.abril.com.br/coluna/o-mundo-de-sofia/junto-com-o-airbnb-paolla-oliveira-assumira-novo-posto-no-carnaval-do-rio/" },
+            ],
+            boardImage: "/ab-board.jpg",
+            boardW: 2000,
+            boardH: 1333,
+            boardLabel: "A aula de samba, sede do Cordão da Bola Preta · foto Ángel Castellanos / Airbnb",
           },
           {
             title: "Hackeando a Copa",
@@ -612,7 +681,7 @@ export default function Portfolio() {
         title: "Trabalhos",
         sub: "Campanha, conteúdo e influência em marca, esporte, música, saúde e evento ao vivo. Todo case aqui vem com número.",
         homeHint: "Os destaques estão aqui embaixo. Todo projeto vive na aba Trabalhos.",
-        homeCta: "Ver os dez projetos",
+        homeCta: "Ver os onze projetos",
         featuredLabel: "Destaques",
         moreLabel: "Outros projetos",
         moreHint: "Versão curta. Case completo em construção",
@@ -974,6 +1043,10 @@ export default function Portfolio() {
         .nb-credit-k { font-family: var(--mono); font-size: 11px; color: var(--ink-faint);
           width: 110px; flex-shrink: 0; padding-top: 2px; }
         .nb-credit-v { font-size: 14px; font-weight: 500; }
+        /* .nb a strips underline site-wide, so the press links earn one back */
+        .nb-press { border-bottom: 1px solid var(--line);
+          transition: color .2s, border-color .2s; }
+        .nb-press:hover { color: var(--accent); border-color: var(--accent); }
 
         /* ---------- board block inside an open case ---------- */
         .nb-block { margin-bottom: 40px; }
