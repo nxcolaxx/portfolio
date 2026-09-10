@@ -290,7 +290,7 @@ export default function Portfolio() {
       },
       work: {
         kicker: "Selected Work",
-        title: "Six cases. Same method every time.",
+        title: "Seven cases. Same method every time.",
         hint: "Open a case. The numbers are inside",
         roleLabel: "Role",
         recogLabel: "Recognition",
@@ -307,6 +307,34 @@ export default function Portfolio() {
           { v: "3", l: "creative awards" },
         ],
         items: [
+          {
+            /* the freshest case and the current account — it leads the grid.
+               The card is cut from the four cover frames, like the Claro one */
+            title: "Break the Rules",
+            thumb: "/neutrogena-card.jpg",
+            home: true,
+            meta: "Neutrogena · Talent · 2026",
+            badge: "Live now",
+            tags: ["Influence strategy", "Global launch", "Beauty"],
+            pitch: "Brazil, second country in the world to launch Neutrogena's global platform. Six women, 27M followers, one rule broken.",
+            p1: "Retinol has always come with a toll attached: it peels, it burns, start slow, don't use it in summer. The category taught a generation of women that results have a price, and the internet repeated it back until it read as law. Neutrogena broke that rule in the formula: Retinol Boost puts 2x the power of retinol into a stabilised formula, so potency stops being the thing you pay for. Break the Rules is the brand mission built on it: break the rules with science, so people can break the rules of beauty. Brazil was the second country in the world to launch it, which meant translating “Don't age by the rules” onto the product here with no local playbook to copy from.",
+            p2: "If the product breaks a rule, the cast has to argue the same thing, not just hold the jar. Anttónia, Cleo Pires, Angélica Silva, Vivi Orth, Mônica Martelli and Magavilhas — six women who each already broke a rule about how a woman is supposed to age, look, or take up space in Brazil. That is what makes the claim land as a life lived rather than a line in a contract. I ran the launch strategy, the curation and the content strategy: which rule each name breaks, in whose voice, in which format, at which point in the launch. Four pieces are live. The rest roll out across the campaign.",
+            metrics: [
+              { v: "2nd", l: "country in the world to launch the global platform" },
+              { v: "27M", l: "combined following across the six names" },
+              { v: "2×", l: "the power of retinol, in a stabilised formula" },
+              { v: "6", l: "names, one broken rule each" },
+            ],
+            reels: [
+              { handle: "cleo", code: "Dc07HRwBte0" },
+              { handle: "angelic4silva", code: "DdC6_ECt1F6" },
+              { handle: "viviorth", code: "DdCnrSuC4QO" },
+              { handle: "neutrogenabr", code: "Dcyf_0Bp7pX" },
+            ],
+            reelsLabel: "The first four films — the launch as it went live",
+            role: "Launch strategy, curation & content strategy",
+            partners: "Anttónia · Cleo Pires · Angélica Silva · Vivi Orth · Mônica Martelli · Magavilhas",
+          },
           {
             title: "Hidden Words",
             meta: "Sanofi · Greenpark · 2024",
@@ -386,7 +414,7 @@ export default function Portfolio() {
           {
             title: "Rio Open",
             meta: "Claro Brasil · Talent · 2025",
-            home: true,
+            home: false,
             tags: ["Real-time", "Sports", "Brand"],
             pitch: "Ten days of tennis, 120+ pieces live, millions reached. Claro never left the conversation.",
             p1: "Latin America's biggest tennis tournament, covered live for ten straight days. I ran strategy and creative direction across three fronts at once: opportunity, real time, and the big activations.",
@@ -444,7 +472,7 @@ export default function Portfolio() {
         title: "Work",
         sub: "Campaigns, content and influencer work across brand, sport, music, healthcare and live events. Every case here has the numbers attached.",
         homeHint: "The highlights are below. Every project lives on the Work page.",
-        homeCta: "See all eleven projects",
+        homeCta: "See all twelve projects",
         featuredLabel: "Featured",
         moreLabel: "More projects",
         moreHint: "Short versions. Full cases in progress",
@@ -574,7 +602,7 @@ export default function Portfolio() {
       },
       work: {
         kicker: "Trabalhos Selecionados",
-        title: "Seis cases. Sempre o mesmo método.",
+        title: "Sete cases. Sempre o mesmo método.",
         hint: "Abra um case. Os números estão dentro",
         roleLabel: "Função",
         recogLabel: "Reconhecimento",
@@ -591,6 +619,34 @@ export default function Portfolio() {
           { v: "3", l: "prêmios de criação" },
         ],
         items: [
+          {
+            /* o case mais fresco e a conta atual — abre a grade.
+               O card é recortado das quatro capas, como o da Claro */
+            title: "Break the Rules",
+            thumb: "/neutrogena-card.jpg",
+            home: true,
+            meta: "Neutrogena · Talent · 2026",
+            badge: "No ar",
+            tags: ["Estratégia de influência", "Lançamento global", "Beleza"],
+            pitch: "O Brasil, segundo país do mundo a lançar a plataforma global da Neutrogena. Seis mulheres, 27 milhões de seguidores, uma regra quebrada.",
+            p1: "Retinol sempre veio com pedágio: descama, arde, comece devagar, não use no verão. A categoria ensinou uma geração de mulheres que resultado tem preço, e a internet repetiu isso até virar lei. A Neutrogena quebrou essa regra na fórmula: o Retinol Boost coloca 2x o poder do retinol numa fórmula estabilizada, e aí potência deixa de ser a parte que você paga. Break the Rules é a missão de marca construída em cima disso: quebrar as regras com ciência, pra que as pessoas possam quebrar as regras da beleza. O Brasil foi o segundo país do mundo a lançar, o que significou traduzir o “Don't age by the rules” para o produto aqui sem playbook local pra copiar.",
+            p2: "Se o produto quebra uma regra, o elenco tem que defender a mesma coisa, e não só segurar o pote. Anttónia, Cleo Pires, Angélica Silva, Vivi Orth, Mônica Martelli e Magavilhas — seis mulheres que já quebraram, cada uma do seu jeito, uma regra sobre como mulher deve envelhecer, aparecer ou ocupar espaço no Brasil. É isso que faz o claim chegar como vida vivida, e não como linha de contrato. Eu conduzi a estratégia de lançamento, a curadoria e a estratégia de conteúdo: qual regra cada nome quebra, em que voz, em que formato, em que momento do lançamento. Quatro conteúdos já estão no ar. O resto entra ao longo da campanha.",
+            metrics: [
+              { v: "2º", l: "país do mundo a lançar a plataforma global" },
+              { v: "27MM", l: "de seguidores somados nos seis nomes" },
+              { v: "2×", l: "o poder do retinol, numa fórmula estabilizada" },
+              { v: "6", l: "nomes, uma regra quebrada cada" },
+            ],
+            reels: [
+              { handle: "cleo", code: "Dc07HRwBte0" },
+              { handle: "angelic4silva", code: "DdC6_ECt1F6" },
+              { handle: "viviorth", code: "DdCnrSuC4QO" },
+              { handle: "neutrogenabr", code: "Dcyf_0Bp7pX" },
+            ],
+            reelsLabel: "Os quatro primeiros filmes — o lançamento como foi ao ar",
+            role: "Estratégia de lançamento, curadoria e estratégia de conteúdo",
+            partners: "Anttónia · Cleo Pires · Angélica Silva · Vivi Orth · Mônica Martelli · Magavilhas",
+          },
           {
             title: "Hidden Words",
             meta: "Sanofi · Greenpark · 2024",
@@ -670,7 +726,7 @@ export default function Portfolio() {
           {
             title: "Rio Open",
             meta: "Claro Brasil · Talent · 2025",
-            home: true,
+            home: false,
             tags: ["Tempo real", "Esportes", "Branding"],
             pitch: "Dez dias de tênis, 120+ conteúdos no ar, milhões de alcance. A Claro não saiu da conversa.",
             p1: "O maior torneio de tênis da América Latina, coberto ao vivo por dez dias seguidos. Cuidei da estratégia e da direção criativa em três frentes ao mesmo tempo: oportunidade, real time e as grandes ativações.",
@@ -728,7 +784,7 @@ export default function Portfolio() {
         title: "Trabalhos",
         sub: "Campanha, conteúdo e influência em marca, esporte, música, saúde e evento ao vivo. Todo case aqui vem com número.",
         homeHint: "Os destaques estão aqui embaixo. Todo projeto vive na aba Trabalhos.",
-        homeCta: "Ver os onze projetos",
+        homeCta: "Ver os doze projetos",
         featuredLabel: "Destaques",
         moreLabel: "Outros projetos",
         moreHint: "Versão curta. Case completo em construção",
