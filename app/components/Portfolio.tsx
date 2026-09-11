@@ -900,6 +900,44 @@ export default function Portfolio() {
   /* the chips wrap in reading order, so the biggest names lead the block */
   const talent = ["Anitta", "Luciano Huck", "Angélica", "Cleo Pires", "Giovanna Ewbank", "Bruno Gagliasso", "Mônica Martelli", "Tiago Leifert", "Anttónia", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Magavilhas", "Gabi Marx", "Angélica Silva", "Cristian Pop", "Emmma Says", "Kady Zadora", "Vic Hollo", "Vivi Orth", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
 
+  /* Instagram handles, each one checked against the live profile before it
+     went in. A name with no entry here renders as a plain chip rather than a
+     guessed link — pointing a public portfolio at the wrong person is worse
+     than not linking at all. Missing, and worth filling in by hand:
+     Victoria Barros, Jorginho Menzinho, Gabi Marx, Cristian Pop,
+     Kady Zadora, Vic Hollo, Bri Meio Brasileira. */
+  const talentIG = {
+    "Anitta": "anitta",
+    "Luciano Huck": "lucianohuck",
+    "Angélica": "angelicaksy",
+    "Cleo Pires": "cleo",
+    "Giovanna Ewbank": "gioewbank",
+    "Bruno Gagliasso": "brunogagliasso",
+    "Mônica Martelli": "monicamartelli",
+    "Tiago Leifert": "tiagoleifert",
+    "Anttónia": "anttonia",
+    "Cazé TV": "cazetv",
+    "João Fonseca": "joaoffonseca",
+    "Paulo Vieira": "paulovieira.oficial",
+    "Irmãos Fittipaldi": "fittipaldibros",
+    "Bravaff": "bravaff",
+    "Leo Puricelli": "leopuricelli",
+    "Magavilhas": "magavilhas",
+    "Angélica Silva": "angelic4silva",
+    "Emmma Says": "emmmasays",
+    "Vivi Orth": "viviorth",
+    "Giulia Porro": "giuliaporro",
+    "Alice Fleury": "alicefleury",
+    "Ray Neon": "rayneon",
+    "Tata Estanieck": "tata",
+    "Fabão": "eusoufabao",
+    "Rafa Tuma": "rafaellatuma",
+    "Jojoca": "jojoca",
+    "Pedro Faria": "pedrofariarod",
+    "Fla Bandoni": "flabandoni",
+    "Marina Guaragna": "marinaguaragna",
+  };
+
   /* ---------------------------- SCROLL ---------------------------- */
   const onScroll = useCallback(() => {
     const y = window.scrollY;
@@ -1254,10 +1292,12 @@ export default function Portfolio() {
         .nb-marquee-item::after { content: ""; width: 9px; height: 9px; border-radius: 50%;
           background: var(--accent); opacity: .55; }
         .nb-talent { display: flex; flex-wrap: wrap; gap: 10px; }
-        .nb-talent span { font-family: var(--sans); font-weight: 500; font-size: 15px;
+        .nb-talent span, .nb-talent a { font-family: var(--sans); font-weight: 500; font-size: 15px;
           padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px;
           background: var(--bg-2); transition: all .2s; }
-        .nb-talent span:hover { border-color: var(--ink); transform: translateY(-2px); }
+        .nb-talent span:hover, .nb-talent a:hover { border-color: var(--ink); transform: translateY(-2px); }
+        /* the linked ones pick up the accent, so the hover says where it goes */
+        .nb-talent a:hover { border-color: var(--accent); color: var(--accent); }
 
         /* ---------- work link (home) ---------- */
         .nb-worklink { margin-top: 40px; display: flex; align-items: center;
@@ -1703,7 +1743,15 @@ export default function Portfolio() {
             </div>
             <div className="nb-strip-label rv">{t.recognition.talentLabel}</div>
             <div className="nb-talent rv d1">
-              {talent.map((p, i) => <span key={i}>{p}</span>)}
+              {talent.map((p, i) => {
+                const ig = talentIG[p];
+                return ig ? (
+                  <a key={i} href={`https://www.instagram.com/${ig}/`}
+                    target="_blank" rel="noopener noreferrer">{p}</a>
+                ) : (
+                  <span key={i}>{p}</span>
+                );
+              })}
             </div>
           </section>
 
