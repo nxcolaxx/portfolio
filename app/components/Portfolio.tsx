@@ -897,7 +897,8 @@ export default function Portfolio() {
   // so adding or reordering a case can't silently change the highlights
   const homeHighlights = t.work.items.filter((p) => p.home);
   const clients = ["Claro", "Neutrogena", "Sanofi", "Unilever", "Huggies", "Samsung", "Suvinil", "Loft", "Licor 43", "Nubank", "Baixio", "Grupo Afeet"];
-  const talent = ["Anitta", "Luciano Huck", "Angélica", "Giovanna Ewbank", "Bruno Gagliasso", "Tiago Leifert", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Gabi Marx", "Cristian Pop", "Emmma Says", "Kady Zadora", "Vic Hollo", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
+  /* the chips wrap in reading order, so the biggest names lead the block */
+  const talent = ["Anitta", "Luciano Huck", "Angélica", "Cleo Pires", "Giovanna Ewbank", "Bruno Gagliasso", "Mônica Martelli", "Tiago Leifert", "Anttónia", "Cazé TV", "João Fonseca", "Paulo Vieira", "Irmãos Fittipaldi", "Victoria Barros", "Jorginho Menzinho", "Bravaff", "Leo Puricelli", "Magavilhas", "Gabi Marx", "Angélica Silva", "Cristian Pop", "Emmma Says", "Kady Zadora", "Vic Hollo", "Vivi Orth", "Giulia Porro", "Alice Fleury", "Ray Neon", "Tata Estanieck", "Bri Meio Brasileira", "Fabão", "Rafa Tuma", "Jojoca", "Pedro Faria", "Fla Bandoni", "Marina Guaragna"];
 
   /* ---------------------------- SCROLL ---------------------------- */
   const onScroll = useCallback(() => {
